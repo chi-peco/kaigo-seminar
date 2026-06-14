@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>日本の介護の仕事を知ろう｜外国人向けセミナー 大和市</title>
+<title>日本の介護の仕事を知ろう｜外国人向けセミナー</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root{
@@ -17,7 +17,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Noto Sans JP','Hiragino Kaku Gothic Pro',sans-serif;color:var(--text);background:#fff;font-size:17px;line-height:1.75;}
-ruby rt{font-size:.52em;color:var(--muted);}
+ruby rt{font-size:.52em;color:#111;}
 a{color:var(--accent);text-decoration:none;}
 
 /* ===== HERO ===== */
@@ -89,7 +89,7 @@ a{color:var(--accent);text-decoration:none;}
 .facility-2col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .facility-card{border:2px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s;}
 .facility-card:hover{border-color:var(--accent);}
-.facility-img{width:100%;height:120px;object-fit:cover;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.facility-img{width:100%;height:200px;object-fit:cover;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
 .facility-info{padding:12px;}
 .facility-name{font-weight:700;color:var(--navy);margin-bottom:4px;font-size:.95em;}
 .facility-detail{font-size:.82em;color:var(--muted);line-height:1.5;}
@@ -292,13 +292,8 @@ footer strong{color:#fff;}
 .kp-nav{display:flex;justify-content:flex-end;margin-top:16px;}
 .kp-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s;}
 .kp-btn:hover{background:var(--primary-dark,#c2410c);}
-.hourenso-card ruby rt,
-.nlevel-report-item ruby rt,
-.hourenso-speech ruby rt,
-.nlevel-report-speech ruby rt,
-.nlevel-report-label ruby rt,
-.hourenso-scene ruby rt,
-.kp-page ruby rt,
+.hourenso-header ruby rt,
+.nlevel-report-header ruby rt,
 .fc-front ruby rt,
 .fc-example-front ruby rt{color:rgba(255,255,255,.85) !important;}
 .ict-pager .ict-page{display:block;}
@@ -314,7 +309,7 @@ footer strong{color:#fff;}
   <div class="hero-content">
     <div class="hero-left">
       <h1 class="hero-title">日本の<span><ruby>介護<rt>かいご</rt></ruby></span>の<ruby>仕事<rt>しごと</rt></ruby>を<ruby>知<rt>し</rt></ruby>ろう</h1>
-      <p style="color:rgba(255,255,255,.75);font-size:1rem;margin:10px 0 18px;"><ruby>外国人向<rt>がいこくじんむ</rt></ruby>けセミナー ｜ <ruby>大和市<rt>やまとし</rt></ruby></p>
+      <p style="color:rgba(255,255,255,.75);font-size:1rem;margin:10px 0 18px;"><ruby>外国人向<rt>がいこくじんむ</rt></ruby>けセミナー</p>
       <ul class="hero-toc">
         <li><a href="#sec1"><span class="hero-toc-num">1</span><ruby>世界<rt>せかい</rt></ruby>の<ruby>高齢化<rt>こうれいか</rt></ruby>と日本のKAIGO</a></li>
         <li><a href="#sec2"><span class="hero-toc-num">2</span><ruby>介護<rt>かいご</rt></ruby>の<ruby>種類<rt>しゅるい</rt></ruby></a></li>
@@ -361,7 +356,7 @@ footer strong{color:#fff;}
   </div>
 
   <div class="card reveal">
-    <div class="card-title">👷 <ruby>日本<rt>にほん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>く<ruby>外国人<rt>がいこくじん</rt></ruby>（<ruby>特定技能<rt>とくていぎのう</rt></ruby>）— <ruby>介護<rt>かいご</rt></ruby>が<ruby>断然トップ<rt>だんぜんとっぷ</rt></ruby></div>
+    <div class="card-title">👷 <ruby>日本<rt>にほん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>く<ruby>外国人<rt>がいこくじん</rt></ruby>（<ruby>特定技能<rt>とくていぎのう</rt></ruby>）</div>
     <div style="font-weight:700;color:var(--navy);margin-bottom:14px;font-size:1rem;">📊 <ruby>特定技能<rt>とくていぎのう</rt></ruby> <ruby>分野別人数<rt>ぶんやべつにんずう</rt></ruby>と<ruby>受入上限<rt>うけいれじょうげん</rt></ruby></div>
     <div style="overflow-x:auto;">
       <table style="width:100%;border-collapse:collapse;font-size:.88em;">
@@ -373,11 +368,33 @@ footer strong{color:#fff;}
           </tr>
         </thead>
         <tbody>
-          <tr style="background:#fff3e0;font-weight:700;">
-            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏥 <ruby>介護<rt>かいご</rt></ruby></td>
-            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">44,367<ruby>人<rt>にん</rt></ruby></td>
-            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--accent);">135,000<ruby>人<rt>にん</rt></ruby></td>
+          <!-- ★ 地域人口（参考）：静岡県→横浜市→大和市→瀬谷区→袋井市 -->
+          <tr style="background:#e8f5e9;font-weight:700;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏙️ <ruby>静岡県<rt>しずおかけん</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby> <small style="font-weight:400;color:var(--muted);">（<ruby>参考<rt>さんこう</rt></ruby>）</small></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:#2e7d32;">3,448,607<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
           </tr>
+          <tr style="background:#e8f5e9;font-weight:700;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏙️ <ruby>横浜市<rt>よこはまし</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby> <small style="font-weight:400;color:var(--muted);">（<ruby>参考<rt>さんこう</rt></ruby>）</small></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:#2e7d32;">約3,770,000<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
+          </tr>
+          <tr style="background:#e8f5e9;font-weight:700;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏙️ <ruby>大和市<rt>やまとし</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby> <small style="font-weight:400;color:var(--muted);">（<ruby>参考<rt>さんこう</rt></ruby>）</small></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:#2e7d32;">245,765<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
+          </tr>
+          <tr style="background:#e8f5e9;font-weight:700;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏙️ <ruby>横浜市<rt>よこはまし</rt></ruby><ruby>瀬谷区<rt>せやく</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby> <small style="font-weight:400;color:var(--muted);">（<ruby>参考<rt>さんこう</rt></ruby>）</small></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:#2e7d32;">120,152<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
+          </tr>
+          <tr style="background:#e8f5e9;font-weight:700;">
+            <td style="padding:9px 12px;border-bottom:2px solid #aaa;">🏙️ <ruby>袋井市<rt>ふくろいし</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby> <small style="font-weight:400;color:var(--muted);">（<ruby>参考<rt>さんこう</rt></ruby>）</small></td>
+            <td style="padding:9px 12px;border-bottom:2px solid #aaa;text-align:right;color:#2e7d32;">87,117<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:2px solid #aaa;text-align:right;color:var(--muted);">—</td>
+          </tr>
+          <!-- 業種別一覧 -->
           <tr style="background:#f8fafc;">
             <td style="padding:9px 12px;border-bottom:1px solid #eee;">🍜 <ruby>飲食料品製造<rt>いんしょくりょうひんせいぞう</rt></ruby></td>
             <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">74,380<ruby>人<rt>にん</rt></ruby></td>
@@ -387,6 +404,11 @@ footer strong{color:#fff;}
             <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏭 <ruby>工業製品製造<rt>こうぎょうせいひんせいぞう</rt></ruby></td>
             <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">45,183<ruby>人<rt>にん</rt></ruby></td>
             <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">173,300<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#fff3e0;font-weight:700;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏥 <ruby>介護<rt>かいご</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">44,367<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--accent);">135,000<ruby>人<rt>にん</rt></ruby></td>
           </tr>
           <tr style="background:#f8fafc;">
             <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏗 <ruby>建設<rt>けんせつ</rt></ruby></td>
@@ -453,29 +475,7 @@ footer strong{color:#fff;}
             <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--accent);font-weight:700;"><ruby>新分野<rt>しんぶんや</rt></ruby></td>
             <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">1,000<ruby>人<rt>にん</rt></ruby></td>
           </tr>
-          <!-- ④ 地域人口比較行（総計前） -->
-          <tr style="background:#f0f6ff;">
-            <td colspan="3" style="padding:8px 12px;">
-              <div style="font-size:.82rem;color:var(--navy);font-weight:700;margin-bottom:6px;">🏙️ <ruby>参考<rt>さんこう</rt></ruby>：<ruby>地域<rt>ちいき</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>との<ruby>比較<rt>ひかく</rt></ruby></div>
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
-                <div style="background:#fff;border-radius:6px;padding:8px;text-align:center;font-size:.8rem;">
-                  <div style="color:var(--muted);margin-bottom:2px;"><ruby>大和市<rt>やまとし</rt></ruby></div>
-                  <div style="font-weight:900;color:var(--navy);">約24<ruby>万人<rt>まんにん</rt></ruby></div>
-                  <div style="color:var(--muted);font-size:.75rem;"><ruby>高齢化率<rt>こうれいかりつ</rt></ruby>約24.5%</div>
-                </div>
-                <div style="background:#fff;border-radius:6px;padding:8px;text-align:center;font-size:.8rem;">
-                  <div style="color:var(--muted);margin-bottom:2px;"><ruby>瀬谷区<rt>せやく</rt></ruby></div>
-                  <div style="font-weight:900;color:var(--navy);">約12<ruby>万人<rt>まんにん</rt></ruby></div>
-                  <div style="color:var(--muted);font-size:.75rem;"><ruby>高齢化率<rt>こうれいかりつ</rt></ruby>約27.1%</div>
-                </div>
-                <div style="background:#fff;border-radius:6px;padding:8px;text-align:center;font-size:.8rem;">
-                  <div style="color:var(--muted);margin-bottom:2px;"><ruby>横浜市<rt>よこはまし</rt></ruby></div>
-                  <div style="font-weight:900;color:var(--navy);">約377<ruby>万人<rt>まんにん</rt></ruby></div>
-                  <div style="color:var(--muted);font-size:.75rem;"><ruby>高齢化率<rt>こうれいかりつ</rt></ruby>約25.4%</div>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <!-- 総計 -->
           <tr style="background:var(--navy);color:#fff;font-weight:700;">
             <td style="padding:10px 12px;">【<ruby>総計<rt>そうけい</rt></ruby>】</td>
             <td style="padding:10px 12px;text-align:right;">284,466<ruby>人<rt>にん</rt></ruby></td>
@@ -484,7 +484,8 @@ footer strong{color:#fff;}
         </tbody>
       </table>
     </div>
-    <p style="font-size:.88rem;color:var(--muted);margin-top:10px;">🔶 <ruby>介護<rt>かいご</rt></ruby>は<ruby>受入上限<rt>うけいれじょうげん</rt></ruby>135,000<ruby>人<rt>にん</rt></ruby>と<ruby>大きな需要<rt>おおきなじゅよう</rt></ruby>があります。<ruby>景気<rt>けいき</rt></ruby>に<ruby>左右<rt>さゆう</rt></ruby>されない<ruby>安定<rt>あんてい</rt></ruby>した<ruby>仕事<rt>しごと</rt></ruby>です。</p>
+    <p style="font-size:.88rem;color:var(--muted);margin-top:10px;">🟢 <ruby>緑色<rt>みどりいろ</rt></ruby>の<ruby>行<rt>ぎょう</rt></ruby>は<ruby>地域<rt>ちいき</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>（<ruby>参考値<rt>さんこうち</rt></ruby>）です。<ruby>特定技能<rt>とくていぎのう</rt></ruby>の<ruby>受入上限<rt>うけいれじょうげん</rt></ruby>と<ruby>比較<rt>ひかく</rt></ruby>できます。</p>
+    <p style="font-size:.88rem;color:var(--muted);margin-top:6px;">🔶 <ruby>介護<rt>かいご</rt></ruby>は<ruby>受入上限<rt>うけいれじょうげん</rt></ruby>135,000<ruby>人<rt>にん</rt></ruby>と<ruby>大きな需要<rt>おおきなじゅよう</rt></ruby>があります。<ruby>景気<rt>けいき</rt></ruby>に<ruby>左右<rt>さゆう</rt></ruby>されない<ruby>安定<rt>あんてい</rt></ruby>した<ruby>仕事<rt>しごと</rt></ruby>です。</p>
     <p class="source-note">出典：<ruby>出入国在留管理庁<rt>しゅつにゅうこくざいりゅうかんりちょう</rt></ruby>「<ruby>特定技能在留外国人数<rt>とくていぎのうざいりゅうがいこくじんすう</rt></ruby>」（令和6年12月末現在・速報値） / <ruby>出入国在留管理庁<rt>しゅつにゅうこくざいりゅうかんりちょう</rt></ruby>「<ruby>特定技能制度<rt>とくていぎのうせいど</rt></ruby><ruby>受入見込数<rt>うけいれみこみすう</rt></ruby>」（令和6〜10年度）</p>
 
   </div>
@@ -1196,6 +1197,35 @@ function toggleNlevel(header){
   const arrow=header.querySelector('.nlevel-arrow');
   body.classList.toggle('open');
   arrow.style.transform=body.classList.contains('open')?'rotate(180deg)':'';
+}
+
+function toggleNReport(id){
+  const body=document.getElementById('nrb-'+id);
+  const header=body.previousElementSibling;
+  const arrow=header.querySelector('.nlevel-report-arrow');
+  if(!body) return;
+  body.classList.toggle('open');
+  if(arrow) arrow.style.transform=body.classList.contains('open')?'rotate(180deg)':'';
+}
+
+function toggleTr(btn){
+  const card=btn.closest('.hourenso-card');
+  if(!card) return;
+  const trans=card.querySelector('.hourenso-trans');
+  if(!trans) return;
+  const isOpen=trans.style.display==='block';
+  trans.style.display=isOpen?'none':'block';
+  btn.innerHTML=isOpen?'🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼':'🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>閉<rt>と</rt></ruby>じる ▲';
+}
+
+function toggleNrTr(btn){
+  const item=btn.closest('.nlevel-report-item');
+  if(!item) return;
+  const trans=item.querySelector('.nr-trans');
+  if(!trans) return;
+  const isOpen=trans.style.display==='block';
+  trans.style.display=isOpen?'none':'block';
+  btn.innerHTML=isOpen?'🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼':'🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>閉<rt>と</rt></ruby>じる ▲';
 }
 
 // ===== FLASHCARDS =====
