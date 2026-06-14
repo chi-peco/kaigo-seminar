@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本の介護の仕事を知ろう｜外国人向けセミナー 大和市</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --primary:#1a5276;
+  --accent:#f97316;
+  --navy:#0d2137;
+  --muted:#6b7280;
+  --light:#f8f9fa;
+  --border:#e5e7eb;
+  --text:#1e293b;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP','Hiragino Kaku Gothic Pro',sans-serif;color:var(--text);background:#fff;font-size:17px;line-height:1.75;}
+ruby rt{font-size:.52em;color:var(--muted);}
+a{color:var(--accent);text-decoration:none;}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:460px;background:#0a1929;display:flex;align-items:center;overflow:hidden;}
+.hero-photos{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;opacity:.38;}
+.hero-slide{position:relative;overflow:hidden;}
+.hero-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-slide-mask{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 100%);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,33,55,.82) 0%,rgba(26,58,92,.7) 100%);z-index:1;}
+.hero-content{position:relative;z-index:3;padding:32px 40px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;width:100%;max-width:1100px;margin:0 auto;}
+.hero-title{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:900;color:#fff;line-height:1.25;text-shadow:0 2px 14px rgba(0,0,0,.55);}
+.hero-title span{color:var(--accent);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.hero-meta-item{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:24px;padding:6px 16px;font-size:.88em;backdrop-filter:blur(4px);}
+.hero-left{position:relative;z-index:2;background:#0d2137;border-radius:14px;padding:36px 32px;}
+.hero-right{position:relative;z-index:2;border-radius:14px;overflow:hidden;height:380px;box-shadow:0 10px 40px rgba(0,0,0,.5);}
+.hero-photo-switcher{position:relative;width:100%;height:100%;}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;}
+.hero-photo.active{opacity:1;}
+.hero-toc{margin-top:20px;list-style:none;display:flex;flex-direction:column;gap:8px;}
+.hero-toc a{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.9);font-size:1rem;border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 16px;transition:all .2s;background:rgba(255,255,255,.06);}
+.hero-toc a:hover{background:rgba(255,255,255,.18);color:#fff;border-color:var(--accent);}
+.hero-toc-num{background:var(--accent);color:#fff;border-radius:6px;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:.88em;font-weight:900;flex-shrink:0;}
+
+.divider{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#c2410c 100%);}
+
+/* ===== SECTION ===== */
+.section{padding:56px 24px;max-width:900px;margin:0 auto;}
+.section-wrap-bg{background:var(--light);}
+.section-label{display:inline-block;background:var(--accent);color:#fff;font-size:.7em;font-weight:800;letter-spacing:.12em;border-radius:4px;padding:3px 10px;margin-bottom:10px;}
+.section-title{font-size:1.8rem;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:24px;padding-bottom:12px;border-bottom:3px solid var(--accent);}
+
+/* ===== CARD ===== */
+.card{background:#fff;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,.08);padding:24px;margin-bottom:24px;}
+.card-title{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.card-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ===== VIDEO PAGE (SECTION 3スタイル) ===== */
+.video-page{background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,.1);margin-bottom:24px;overflow:hidden;}
+.video-header{display:flex;align-items:center;gap:16px;padding:18px 24px;background:var(--primary);}
+.video-num{background:var(--accent);color:#fff;font-size:1.3rem;font-weight:900;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.video-title{font-size:1.1rem;font-weight:700;color:var(--accent);}
+.video-time{font-size:.9rem;color:rgba(255,255,255,.7);}
+.video-body{padding:0 28px 24px;}
+.video-link{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;padding:12px 24px;font-weight:700;font-size:1rem;margin-top:20px;transition:background .2s;}
+.video-link:hover{background:#c2410c;}
+
+/* ===== PYRAMID ===== */
+.pyramid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin-top:8px;}
+.pyramid-btn{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px;background:var(--light);border-radius:10px;border:2px solid var(--border);color:var(--navy);font-size:.88em;font-weight:600;transition:all .2s;cursor:pointer;}
+.pyramid-btn:hover{border-color:var(--accent);background:#fff3e0;}
+.pyramid-flag{font-size:1.6rem;}
+
+/* ===== SKILL BARS ===== */
+.skill-bar-row{display:grid;grid-template-columns:160px 1fr 70px;align-items:center;gap:10px;margin-bottom:10px;}
+.skill-bar-label{font-size:.85em;color:var(--navy);font-weight:600;}
+.skill-bar-track{background:#e5e7eb;border-radius:6px;height:28px;overflow:hidden;}
+.skill-bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:10px;font-size:.78em;color:#fff;font-weight:700;white-space:nowrap;}
+.skill-bar-val{font-size:.82em;color:var(--muted);font-weight:700;text-align:right;}
+
+/* ===== SECTION 2 ===== */
+.kaigodo-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
+.level-grid{display:flex;flex-direction:column;gap:8px;}
+.level-row{display:flex;gap:10px;align-items:flex-start;}
+.level-badge{background:var(--accent);color:#fff;border-radius:6px;padding:4px 10px;font-size:.8em;font-weight:700;white-space:nowrap;flex-shrink:0;}
+.level-badge.light{background:#fb923c;}
+.level-badge.heavy{background:#c2410c;}
+.level-desc{font-size:.87em;color:#374151;line-height:1.5;}
+.facility-2col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.facility-card{border:2px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s;}
+.facility-card:hover{border-color:var(--accent);}
+.facility-img{width:100%;height:120px;object-fit:cover;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.facility-info{padding:12px;}
+.facility-name{font-weight:700;color:var(--navy);margin-bottom:4px;font-size:.95em;}
+.facility-detail{font-size:.82em;color:var(--muted);line-height:1.5;}
+.facility-tag{display:inline-block;font-size:.7em;background:var(--accent);color:#fff;border-radius:4px;padding:2px 7px;margin-bottom:5px;}
+
+/* ===== WORK LIST ===== */
+.work-list{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:16px;}
+.work-item{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;border-bottom:1px solid var(--border);}
+.work-item:last-child{border-bottom:none;}
+.work-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px;}
+.work-title{font-weight:700;color:var(--navy);margin-right:6px;font-size:1.05rem;}
+.work-sub{color:var(--muted);font-size:.88em;}
+
+/* ===== SHIFT ===== */
+.shift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:14px;}
+.shift-card{padding:14px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.15);background:var(--primary);color:#fff;}
+.shift-card:last-child{border-right:none;}
+.shift-name{font-size:.82em;font-weight:700;margin-bottom:4px;}
+.shift-time{font-size:.95em;font-weight:900;color:var(--accent);margin-bottom:4px;}
+.shift-detail{font-size:.75em;opacity:.8;line-height:1.5;}
+
+/* ===== ICT 2×2 ===== */
+.ict-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--border);border-radius:12px;overflow:hidden;margin:14px 0;}
+.ict-card{padding:18px 14px;display:flex;gap:12px;align-items:flex-start;border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+.ict-card:nth-child(2n){border-right:none;}
+.ict-card:nth-last-child(-n+2){border-bottom:none;}
+.ict-icon{font-size:1.8rem;flex-shrink:0;}
+.ict-name{font-size:.9em;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.ict-desc{font-size:.78em;color:var(--muted);line-height:1.5;}
+
+/* 眠りスキャン */
+.nemuri-row{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px;}
+.nemuri-card{background:#eaf4fb;border-radius:10px;overflow:hidden;border:1px solid #aed6f1;}
+.nemuri-img{height:120px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.nemuri-info{padding:10px 12px;}
+.nemuri-name{font-weight:700;color:var(--primary);margin-bottom:3px;font-size:.9em;}
+.nemuri-desc{font-size:.78em;color:var(--muted);line-height:1.5;}
+
+/* ===== 給与バー ===== */
+.salary-bar{display:grid;grid-template-columns:140px 1fr auto;align-items:center;gap:10px;margin-bottom:10px;}
+.salary-label{font-size:.85em;color:var(--navy);font-weight:600;line-height:1.4;}
+.salary-track{background:#e5e7eb;border-radius:6px;height:28px;overflow:hidden;}
+.salary-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--accent),#c2410c);}
+.salary-val{font-size:.88em;color:var(--navy);font-weight:800;white-space:nowrap;}
+.salary-breakdown{margin-top:14px;padding:14px;background:#f8fafc;border-radius:10px;font-size:.88em;line-height:2;}
+
+/* ===== キャリア ===== */
+.career-flow{display:flex;align-items:stretch;flex-wrap:wrap;gap:0;margin-top:16px;}
+.career-step{background:var(--primary);color:#fff;border-radius:10px;padding:16px 14px;min-width:110px;text-align:center;flex:1;}
+.career-step.highlight{background:#92400e;border:3px solid var(--accent);}
+.career-step h4{font-size:.85em;font-weight:700;line-height:1.4;}
+.career-step p{font-size:.72em;opacity:.75;margin-top:5px;line-height:1.4;}
+.career-arrow{display:flex;align-items:center;padding:0 4px;color:var(--accent);font-size:1.3rem;}
+
+/* ===== 報連相（situation-box スタイル） ===== */
+.situation-box{background:#eaf4fb;border-left:5px solid var(--primary);border-radius:8px;padding:18px 22px;margin-bottom:16px;font-size:1rem;line-height:2;}
+.situation-label-inline{font-weight:700;color:var(--primary);margin-right:8px;}
+.situation-trans{margin-top:10px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.situation-trans-cell{background:rgba(255,255,255,.7);border:1px solid #aed6f1;border-radius:6px;padding:6px 8px;font-size:.78em;line-height:1.5;}
+.situation-trans-cell .flag{font-size:.9em;}
+.situation-trans-cell .tr-text{color:#1a3a5c;font-weight:600;}
+
+/* ===== N5〜N1 アコーディオン ===== */
+.nlevel-list{display:flex;flex-direction:column;gap:8px;}
+.nlevel-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.nlevel-header{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;background:#fff;user-select:none;}
+.nlevel-header:hover{background:#f8fafc;}
+.nlevel-badge{background:var(--primary);color:#fff;border-radius:6px;padding:4px 12px;font-size:1rem;font-weight:900;min-width:52px;text-align:center;}
+.nlevel-summary{font-size:.9em;color:var(--navy);font-weight:600;flex:1;}
+.nlevel-arrow{color:var(--muted);font-size:.8em;transition:transform .3s;}
+.nlevel-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.nlevel-body.open{max-height:300px;}
+.nlevel-body-inner{padding:14px 18px 18px;border-top:1px solid #f0f0f0;}
+.nlevel-text{font-size:.92rem;line-height:1.9;color:#333;}
+.nlevel-note{font-size:.8rem;color:var(--muted);margin-top:8px;}
+
+/* ===== FLASHCARD ===== */
+.fc-category-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.fc-cat-btn{background:#fff;color:var(--muted);border:1px solid #dee2e6;border-radius:20px;padding:8px 18px;cursor:pointer;font-family:inherit;font-size:.95rem;transition:all .2s;}
+.fc-cat-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.fc-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;align-items:center;}
+.fc-btn{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:12px 22px;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:700;transition:background .2s;}
+.fc-btn:hover{background:#154360;}
+.fc-btn.secondary{background:#fff;color:var(--primary);border:2px solid var(--primary);}
+.fc-btn.secondary:hover{background:#eaf0fb;}
+/* 言語選択 */
+.fc-lang-select{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center;}
+.fc-lang-select span{font-size:.85rem;color:var(--muted);font-weight:700;}
+.lang-btn{background:#fff;color:var(--text);border:1px solid #dee2e6;border-radius:6px;padding:5px 12px;cursor:pointer;font-family:inherit;font-size:.8rem;transition:all .2s;}
+.lang-btn.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+/* 2枚フリップカード */
+.fc-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+.fc-single-wrap{perspective:1000px;}
+.fc-card-inner{position:relative;width:100%;min-height:340px;transition:transform .6s;transform-style:preserve-3d;cursor:pointer;}
+.fc-card-inner.flipped{transform:rotateY(180deg);}
+.fc-front,.fc-back{position:absolute;width:100%;min-height:340px;backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px 16px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.12);}
+.fc-front{background:linear-gradient(135deg,var(--primary),#2e86ab);color:#fff;} .fc-front ruby rt{color:rgba(255,255,255,.75);font-size:.55em;}
+.fc-back{background:#fff;transform:rotateY(180deg);color:var(--text);justify-content:flex-start;padding-top:16px;}
+.fc-jp-word{font-size:2.6rem;font-weight:900;line-height:1.2;margin-bottom:6px;}
+.fc-jp-ruby{font-size:1rem;color:#aed6f1;}
+.fc-example-front{font-size:.8rem;color:rgba(255,255,255,.9);margin-top:12px;line-height:1.6;padding:0 8px;}
+.fc-hint{font-size:.82rem;color:rgba(255,255,255,.55);margin-top:14px;}
+/* 裏面：全言語リスト */
+.fc-langs{width:100%;display:grid;gap:5px;margin-bottom:8px;}
+.fc-lang-row{display:flex;align-items:flex-start;gap:6px;font-size:.85rem;text-align:left;}
+.fc-lang-flag{flex-shrink:0;font-size:.95rem;}
+.fc-lang-text{color:#333;line-height:1.4;}
+.fc-example-back{font-size:.8rem;color:#666;border-top:1px solid #eee;padding-top:8px;margin-top:6px;line-height:1.7;width:100%;text-align:center;}
+/* ナビ */
+.fc-nav{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:20px;}
+.fc-nav-btn{background:#fff;border:2px solid var(--primary);color:var(--primary);border-radius:50%;width:50px;height:50px;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.fc-nav-btn:hover{background:var(--primary);color:#fff;}
+.fc-counter{font-size:.95rem;color:var(--muted);font-weight:700;}
+/* 一覧モード */
+.fc-list-wrap{display:none;overflow-x:auto;}
+.fc-list-wrap.show{display:block;}
+.fc-list-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:700px;}
+.fc-list-table th{background:var(--primary);color:#fff;padding:9px 12px;text-align:left;} .fc-list-table th ruby rt{color:rgba(255,255,255,.8);}
+.fc-list-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+.fc-list-table tr:nth-child(even) td{background:#f8fafc;}
+
+/* ===== 報連相カード ===== */
+.hourenso-card{background:#fff;border-radius:12px;box-shadow:0 3px 16px rgba(0,0,0,.1);margin-bottom:16px;overflow:hidden;}
+.hourenso-header{display:flex;align-items:center;gap:12px;padding:14px 18px;color:#fff;}
+.h-report{background:linear-gradient(135deg,#1a5276,#2e86c1);}
+.h-contact{background:linear-gradient(135deg,#117a65,#1abc9c);}
+.h-consult{background:linear-gradient(135deg,#884ea0,#a569bd);}
+.h-record{background:linear-gradient(135deg,#784212,#d35400);}
+.hourenso-icon{font-size:1.4rem;}
+.hourenso-type{font-size:1.05rem;font-weight:800;flex:1;}
+.tr-toggle-btn{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:20px;padding:5px 14px;cursor:pointer;font-size:.82em;font-weight:700;transition:background .2s;white-space:nowrap;}
+.tr-toggle-btn:hover{background:rgba(255,255,255,.35);}
+.hourenso-body{padding:16px 18px;}
+.hourenso-scene{font-size:.82em;color:var(--muted);margin-bottom:10px;background:#f8fafc;border-radius:6px;padding:6px 10px;}
+.hourenso-speech{font-size:.97rem;line-height:2;color:var(--text);font-weight:500;}
+.hourenso-trans{margin-top:14px;border-top:1px solid var(--border);padding-top:12px;}
+.tr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.tr-cell{background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:8px 10px;}
+.tr-flag{font-size:1rem;margin-right:4px;}
+.tr-lang{font-size:.7em;font-weight:700;color:var(--muted);margin-right:6px;}
+.tr-txt{font-size:.8em;color:#1e293b;line-height:1.5;display:block;margin-top:3px;}
+
+/* ===== N5〜N1 報告カード ===== */
+.nlevel-report-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:10px;}
+.nlevel-report-header{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;background:#fff;user-select:none;transition:background .2s;}
+.nlevel-report-header:hover{background:#f8fafc;}
+.nlevel-report-badge{color:#fff;border-radius:6px;padding:6px 0;font-size:1rem;font-weight:900;width:80px;text-align:center;flex-shrink:0;display:inline-block;}
+.nlevel-report-label{font-size:.88em;color:var(--navy);font-weight:600;flex:1;}
+.nlevel-report-arrow{color:var(--muted);font-size:.8em;transition:transform .3s;}
+.nlevel-report-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.nlevel-report-body.open{max-height:600px;}
+.nlevel-report-speech{font-size:.97rem;line-height:2.1;color:var(--text);background:#eaf4fb;border-left:4px solid var(--primary);border-radius:0 8px 8px 0;padding:14px 16px;margin-top:4px;}
+
+/* ===== ギャラリー ===== */
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.gallery-img-box{border-radius:12px;overflow:hidden;background:#dde4ee;}
+.gallery-img-box img{width:100%;height:220px;object-fit:cover;display:block;}
+.gallery-caption{font-size:.82em;color:var(--muted);text-align:center;padding:6px 4px;}
+.gallery-nav-row{display:none;}
+.gallery-btn{display:none;}
+.gallery-counter{display:none;}
+
+.source-note{font-size:.76rem;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px solid var(--border);line-height:1.8;}
+
+
+/* ===== STICKY 報告基本文 ===== */
+.sticky-report-wrap{position:sticky;top:0;z-index:100;padding:0 0 8px 0;}
+.sticky-report-box{background:#1a5276;color:#fff;border-radius:10px;padding:16px 20px;font-size:1rem;line-height:2.1;box-shadow:0 4px 20px rgba(0,0,0,.35);}
+.sticky-report-label{font-size:.8em;opacity:.75;margin-bottom:6px;}
+.sticky-report-scroll{overflow-y:auto;max-height:calc(100vh - 120px);}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s,transform .65s;}
+.reveal.from-right{transform:translateX(40px);}
+.reveal.visible{opacity:1;transform:none;}
+
+footer{background:var(--navy);color:rgba(255,255,255,.8);text-align:center;padding:30px 20px;font-size:.88em;}
+footer strong{color:#fff;}
+
+@media(max-width:680px){
+  .tr-grid{grid-template-columns:1fr 1fr;}
+
+  .kaigodo-layout,.facility-2col,.nemuri-row,.fc-pair{grid-template-columns:1fr;}
+  .ict-grid{grid-template-columns:1fr;}
+  .ict-card{border-right:none!important;}
+  .shift-grid{grid-template-columns:1fr 1fr;}
+  .nlevel-trans-inner,.situation-trans{grid-template-columns:1fr 1fr;}
+  .hero-content{padding:36px 20px;}
+  .career-flow{flex-direction:column;}
+  .career-arrow{transform:rotate(90deg);justify-content:center;}
+  .gallery-img-box img{height:160px;}
+  .skill-bar-row{grid-template-columns:100px 1fr 55px;}
+  .salary-bar{grid-template-columns:110px 1fr auto;}
+  body{font-size:16px;}
+}
+.fc-front ruby rt{color:rgba(255,255,255,.82) !important;}
+.fc-list-table th ruby rt{color:rgba(255,255,255,.85) !important;}
+.kaigodo-pager .kp-page{display:none;}
+.kaigodo-pager .kp-page.active{display:block;}
+.kp-nav{display:flex;justify-content:flex-end;margin-top:16px;}
+.kp-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s;}
+.kp-btn:hover{background:var(--primary-dark,#c2410c);}
+.hourenso-card ruby rt,
+.nlevel-report-item ruby rt,
+.hourenso-speech ruby rt,
+.nlevel-report-speech ruby rt,
+.nlevel-report-label ruby rt,
+.hourenso-scene ruby rt,
+.kp-page ruby rt,
+.fc-front ruby rt,
+.fc-example-front ruby rt{color:rgba(255,255,255,.85) !important;}
+.ict-pager .ict-page{display:block;}
+.ict-page-nav{display:none;}
+/* ICT縦スクロール用区切り */
+.ict-section-divider{border:none;border-top:2px dashed var(--border);margin:20px 0;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-left">
+      <h1 class="hero-title">日本の<span><ruby>介護<rt>かいご</rt></ruby></span>の<ruby>仕事<rt>しごと</rt></ruby>を<ruby>知<rt>し</rt></ruby>ろう</h1>
+      <p style="color:rgba(255,255,255,.75);font-size:1rem;margin:10px 0 18px;"><ruby>外国人向<rt>がいこくじんむ</rt></ruby>けセミナー ｜ <ruby>大和市<rt>やまとし</rt></ruby></p>
+      <ul class="hero-toc">
+        <li><a href="#sec1"><span class="hero-toc-num">1</span><ruby>世界<rt>せかい</rt></ruby>の<ruby>高齢化<rt>こうれいか</rt></ruby>と日本のKAIGO</a></li>
+        <li><a href="#sec2"><span class="hero-toc-num">2</span><ruby>介護<rt>かいご</rt></ruby>の<ruby>種類<rt>しゅるい</rt></ruby></a></li>
+        <li><a href="#sec3"><span class="hero-toc-num">3</span><ruby>仕事内容<rt>しごとないよう</rt></ruby>・ICT・<ruby>給与<rt>きゅうよ</rt></ruby></a></li>
+        <li><a href="#sec4"><span class="hero-toc-num">4</span>キャリアアップと<ruby>資格取得<rt>しかくしゅとく</rt></ruby></a></li>
+        <li><a href="#sec5"><span class="hero-toc-num">5</span><ruby>働<rt>はたら</rt></ruby>くための<ruby>言葉<rt>ことば</rt></ruby>と「<ruby>報連相<rt>ほうれんそう</rt></ruby>」</a></li>
+      </ul>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo-switcher">
+        <img src="images/img01.png" alt="" class="hero-photo active">
+        <img src="images/img02.jpg" alt="" class="hero-photo">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- SEC1 -->
+<div id="sec1"><div class="section reveal">
+  <span class="section-label">SECTION 01</span>
+  <h2 class="section-title"><ruby>世界<rt>せかい</rt></ruby>の<ruby>高齢化<rt>こうれいか</rt></ruby>と日本のKAIGO</h2>
+
+  <div class="card reveal">
+    <div class="card-title">🌍 <ruby>世界<rt>せかい</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>ピラミッド — <ruby>参加者<rt>さんかしゃ</rt></ruby>の<ruby>国<rt>くに</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみよう</div>
+    <p style="font-size:.92rem;color:var(--muted);margin-bottom:14px;"><ruby>下<rt>した</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>いほど<ruby>若<rt>わか</rt></ruby>い<ruby>国<rt>くに</rt></ruby>。<ruby>上<rt>うえ</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>くなるほど<ruby>高齢化<rt>こうれいか</rt></ruby>が<ruby>進<rt>すす</rt></ruby>んでいます。</p>
+    <div class="pyramid-grid">
+      <a class="pyramid-btn" href="https://www.populationpyramid.net/japan/2026/" target="_blank"><span class="pyramid-flag">🇯🇵</span><ruby>日本<rt>にほん</rt></ruby></a>
+      <a class="pyramid-btn" href="https://www.populationpyramid.net/china/2026/" target="_blank"><span class="pyramid-flag">🇨🇳</span><ruby>中国<rt>ちゅうごく</rt></ruby></a>
+      <a class="pyramid-btn" href="https://www.populationpyramid.net/philippines/2026/" target="_blank"><span class="pyramid-flag">🇵🇭</span>フィリピン</a>
+      <a class="pyramid-btn" href="https://www.populationpyramid.net/peru/2026/" target="_blank"><span class="pyramid-flag">🇵🇪</span>ペルー</a>
+      <a class="pyramid-btn" href="https://www.populationpyramid.net/brazil/2026/" target="_blank"><span class="pyramid-flag">🇧🇷</span>ブラジル</a>
+      <a class="pyramid-btn" href="https://www.populationpyramid.net/senegal/2026/" target="_blank"><span class="pyramid-flag">🇸🇳</span>セネガル</a>
+      <a class="pyramid-btn" href="https://www.populationpyramid.net/russian-federation/2026/" target="_blank"><span class="pyramid-flag">🇷🇺</span>ロシア</a>
+      <a class="pyramid-btn" href="https://www.populationpyramid.net/thailand/2026/" target="_blank"><span class="pyramid-flag">🇹🇭</span>タイ</a>
+    </div>
+  </div>
+
+  <div class="card reveal from-right">
+    <div class="card-title">📈 <ruby>高齢化率<rt>こうれいかりつ</rt></ruby>の<ruby>推移<rt>すいい</rt></ruby>（<ruby>過去<rt>かこ</rt></ruby>〜<ruby>将来<rt>しょうらい</rt></ruby>）</div>
+    <canvas id="agingChart" style="max-height:320px;"></canvas>
+    <p style="font-size:.88rem;color:var(--muted);margin-top:10px;">💡 日本は<ruby>世界<rt>せかい</rt></ruby>で<ruby>最<rt>もっと</rt></ruby>も<ruby>高齢化<rt>こうれいか</rt></ruby>が<ruby>進<rt>すす</rt></ruby>んだ<ruby>国<rt>くに</rt></ruby>。<ruby>介護人材<rt>かいごじんざい</rt></ruby>の<ruby>不足<rt>ふそく</rt></ruby>が<ruby>深刻<rt>しんこく</rt></ruby>です。</p>
+    <p class="source-note">出典：UN World Population Prospects 2024 / <ruby>内閣府<rt>ないかくふ</rt></ruby>「<ruby>高齢社会白書<rt>こうれいしゃかいはくしょ</rt></ruby>」（<ruby>推定値含<rt>すいていちふく</rt></ruby>む）</p>
+  </div>
+
+  <div class="card reveal">
+    <div class="card-title">👷 <ruby>日本<rt>にほん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>く<ruby>外国人<rt>がいこくじん</rt></ruby>（<ruby>特定技能<rt>とくていぎのう</rt></ruby>）— <ruby>介護<rt>かいご</rt></ruby>が<ruby>断然トップ<rt>だんぜんとっぷ</rt></ruby></div>
+    <div style="font-weight:700;color:var(--navy);margin-bottom:14px;font-size:1rem;">📊 <ruby>特定技能<rt>とくていぎのう</rt></ruby> <ruby>分野別人数<rt>ぶんやべつにんずう</rt></ruby>と<ruby>受入上限<rt>うけいれじょうげん</rt></ruby></div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:.88em;">
+        <thead>
+          <tr style="background:var(--navy);color:#fff;">
+            <th style="padding:10px 12px;text-align:left;white-space:nowrap;"><ruby>特定産業分野<rt>とくていさんぎょうぶんや</rt></ruby></th>
+            <th style="padding:10px 12px;text-align:right;white-space:nowrap;"><ruby>現在<rt>げんざい</rt></ruby>の<ruby>人数<rt>にんずう</rt></ruby><br><small style="opacity:.75;">令和6年12月末</small></th>
+            <th style="padding:10px 12px;text-align:right;white-space:nowrap;"><ruby>受入上限<rt>うけいれじょうげん</rt></ruby><br><small style="opacity:.75;">令和6〜10年度</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fff3e0;font-weight:700;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏥 <ruby>介護<rt>かいご</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">44,367<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--accent);">135,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🍜 <ruby>飲食料品製造<rt>いんしょくりょうひんせいぞう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">74,380<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">139,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏭 <ruby>工業製品製造<rt>こうぎょうせいひんせいぞう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">45,183<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">173,300<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏗 <ruby>建設<rt>けんせつ</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">38,365<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">80,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🌾 <ruby>農業<rt>のうぎょう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">78,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🍽 <ruby>外食業<rt>がいしょくぎょう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">53,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🧹 ビルクリーニング</td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">6,140<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">37,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🚢 <ruby>造船<rt>ぞうせん</rt></ruby>・<ruby>舶用工業<rt>はくようこうぎょう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">9,665<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">36,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🚌 <ruby>自動車運送業<rt>じどうしゃうんそうぎょう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--accent);font-weight:700;"><ruby>新分野<rt>しんぶんや</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">24,500<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🏨 <ruby>宿泊<rt>しゅくはく</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">23,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🐟 <ruby>漁業<rt>ぎょぎょう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">17,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🔧 <ruby>自動車整備<rt>じどうしゃせいび</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--muted);">—</td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">10,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🌲 <ruby>木材産業<rt>もくざいさんぎょう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--accent);font-weight:700;"><ruby>新分野<rt>しんぶんや</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">5,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">✈️ <ruby>航空<rt>こうくう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">1,382<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">4,400<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🚃 <ruby>鉄道<rt>てつどう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--accent);font-weight:700;"><ruby>新分野<rt>しんぶんや</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">3,800<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;">🌿 <ruby>林業<rt>りんぎょう</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;color:var(--accent);font-weight:700;"><ruby>新分野<rt>しんぶんや</rt></ruby></td>
+            <td style="padding:9px 12px;border-bottom:1px solid #eee;text-align:right;">1,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+          <!-- ④ 地域人口比較行（総計前） -->
+          <tr style="background:#f0f6ff;">
+            <td colspan="3" style="padding:8px 12px;">
+              <div style="font-size:.82rem;color:var(--navy);font-weight:700;margin-bottom:6px;">🏙️ <ruby>参考<rt>さんこう</rt></ruby>：<ruby>地域<rt>ちいき</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>との<ruby>比較<rt>ひかく</rt></ruby></div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+                <div style="background:#fff;border-radius:6px;padding:8px;text-align:center;font-size:.8rem;">
+                  <div style="color:var(--muted);margin-bottom:2px;"><ruby>大和市<rt>やまとし</rt></ruby></div>
+                  <div style="font-weight:900;color:var(--navy);">約24<ruby>万人<rt>まんにん</rt></ruby></div>
+                  <div style="color:var(--muted);font-size:.75rem;"><ruby>高齢化率<rt>こうれいかりつ</rt></ruby>約24.5%</div>
+                </div>
+                <div style="background:#fff;border-radius:6px;padding:8px;text-align:center;font-size:.8rem;">
+                  <div style="color:var(--muted);margin-bottom:2px;"><ruby>瀬谷区<rt>せやく</rt></ruby></div>
+                  <div style="font-weight:900;color:var(--navy);">約12<ruby>万人<rt>まんにん</rt></ruby></div>
+                  <div style="color:var(--muted);font-size:.75rem;"><ruby>高齢化率<rt>こうれいかりつ</rt></ruby>約27.1%</div>
+                </div>
+                <div style="background:#fff;border-radius:6px;padding:8px;text-align:center;font-size:.8rem;">
+                  <div style="color:var(--muted);margin-bottom:2px;"><ruby>横浜市<rt>よこはまし</rt></ruby></div>
+                  <div style="font-weight:900;color:var(--navy);">約377<ruby>万人<rt>まんにん</rt></ruby></div>
+                  <div style="color:var(--muted);font-size:.75rem;"><ruby>高齢化率<rt>こうれいかりつ</rt></ruby>約25.4%</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr style="background:var(--navy);color:#fff;font-weight:700;">
+            <td style="padding:10px 12px;">【<ruby>総計<rt>そうけい</rt></ruby>】</td>
+            <td style="padding:10px 12px;text-align:right;">284,466<ruby>人<rt>にん</rt></ruby></td>
+            <td style="padding:10px 12px;text-align:right;">820,000<ruby>人<rt>にん</rt></ruby></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.88rem;color:var(--muted);margin-top:10px;">🔶 <ruby>介護<rt>かいご</rt></ruby>は<ruby>受入上限<rt>うけいれじょうげん</rt></ruby>135,000<ruby>人<rt>にん</rt></ruby>と<ruby>大きな需要<rt>おおきなじゅよう</rt></ruby>があります。<ruby>景気<rt>けいき</rt></ruby>に<ruby>左右<rt>さゆう</rt></ruby>されない<ruby>安定<rt>あんてい</rt></ruby>した<ruby>仕事<rt>しごと</rt></ruby>です。</p>
+    <p class="source-note">出典：<ruby>出入国在留管理庁<rt>しゅつにゅうこくざいりゅうかんりちょう</rt></ruby>「<ruby>特定技能在留外国人数<rt>とくていぎのうざいりゅうがいこくじんすう</rt></ruby>」（令和6年12月末現在・速報値） / <ruby>出入国在留管理庁<rt>しゅつにゅうこくざいりゅうかんりちょう</rt></ruby>「<ruby>特定技能制度<rt>とくていぎのうせいど</rt></ruby><ruby>受入見込数<rt>うけいれみこみすう</rt></ruby>」（令和6〜10年度）</p>
+
+  </div>
+</div></div>
+<div class="divider"></div>
+
+<!-- SEC2 -->
+<div id="sec2" class="section-wrap-bg"><div class="section reveal">
+  <span class="section-label">SECTION 02</span>
+  <h2 class="section-title"><ruby>介護<rt>かいご</rt></ruby>の<ruby>種類<rt>しゅるい</rt></ruby></h2>
+
+  <!-- 介護度：2ページ切り替え -->
+  <div class="kaigodo-pager">
+    <!-- PAGE 1: 表画像 -->
+    <div class="kp-page active" id="kp-page1">
+      <div class="card reveal">
+        <div class="card-title" style="font-size:1.2rem;">📋 <ruby>介護保険<rt>かいごほけん</rt></ruby>の7<ruby>段階<rt>だんかい</rt></ruby>　<span style="font-size:.7rem;color:var(--muted);font-weight:400;">（1/2）</span></div>
+        <div style="border-radius:10px;overflow:hidden;">
+          <img src="images/img03.png" alt="介護度表" style="width:100%;height:auto;display:block;">
+        </div>
+        <div class="kp-nav">
+          <button class="kp-btn" onclick="showKpPage(2)"><ruby>各<rt>かく</rt></ruby>レベルの<ruby>説明<rt>せつめい</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▶</button>
+        </div>
+      </div>
+    </div>
+    <!-- PAGE 2: 説明カード -->
+    <div class="kp-page" id="kp-page2">
+      <div class="card reveal">
+        <div class="card-title" style="font-size:1.2rem;">📋 <ruby>介護保険<rt>かいごほけん</rt></ruby>の7<ruby>段階<rt>だんかい</rt></ruby>　<span style="font-size:.7rem;color:var(--muted);font-weight:400;">（2/2）</span></div>
+        <div class="level-grid">
+          <div class="level-row">
+            <div class="level-badge light" style="font-size:1rem;padding:8px 14px;min-width:130px;"><ruby>要支援<rt>ようしえん</rt></ruby>1</div>
+            <div class="level-desc" style="font-size:1rem;">ひとりで<ruby>生活<rt>せいかつ</rt></ruby>できます。でも、<ruby>少<rt>すこ</rt></ruby>しだけ<ruby>手伝<rt>てつだ</rt></ruby>いが<ruby>必要<rt>ひつよう</rt></ruby>です。</div>
+          </div>
+          <div class="level-row">
+            <div class="level-badge light" style="font-size:1rem;padding:8px 14px;min-width:130px;"><ruby>要支援<rt>ようしえん</rt></ruby>2</div>
+            <div class="level-desc" style="font-size:1rem;">ひとりで<ruby>生活<rt>せいかつ</rt></ruby>できます。<ruby>要支援<rt>ようしえん</rt></ruby>1より<ruby>手伝<rt>てつだ</rt></ruby>いが<ruby>少<rt>すこ</rt></ruby>し<ruby>多<rt>おお</rt></ruby>いです。</div>
+          </div>
+          <div class="level-row">
+            <div class="level-badge" style="font-size:1rem;padding:8px 14px;min-width:130px;"><ruby>要介護<rt>ようかいご</rt></ruby>1</div>
+            <div class="level-desc" style="font-size:1rem;"><ruby>立<rt>た</rt></ruby>つ・<ruby>歩<rt>ある</rt></ruby>くが<ruby>少<rt>すこ</rt></ruby>し<ruby>難<rt>むずか</rt></ruby>しいです。ごはんやトイレを<ruby>手伝<rt>てつだ</rt></ruby>うことがあります。</div>
+          </div>
+          <div class="level-row">
+            <div class="level-badge" style="font-size:1rem;padding:8px 14px;min-width:130px;"><ruby>要介護<rt>ようかいご</rt></ruby>2</div>
+            <div class="level-desc" style="font-size:1rem;"><ruby>歩<rt>ある</rt></ruby>くのが<ruby>難<rt>むずか</rt></ruby>しいです。ごはん・トイレ・おふろで<ruby>手伝<rt>てつだ</rt></ruby>いが<ruby>必要<rt>ひつよう</rt></ruby>です。</div>
+          </div>
+          <div class="level-row">
+            <div class="level-badge" style="font-size:1rem;padding:8px 14px;min-width:130px;"><ruby>要介護<rt>ようかいご</rt></ruby>3</div>
+            <div class="level-desc" style="font-size:1rem;">ひとりでは<ruby>生活<rt>せいかつ</rt></ruby>できません。ごはん・トイレ・おふろ・<ruby>着替<rt>きが</rt></ruby>えなど、ほぼ<ruby>全部手伝<rt>ぜんぶてつだ</rt></ruby>います。</div>
+          </div>
+          <div class="level-row">
+            <div class="level-badge heavy" style="font-size:1rem;padding:8px 14px;min-width:130px;"><ruby>要介護<rt>ようかいご</rt></ruby>4</div>
+            <div class="level-desc" style="font-size:1rem;">ほぼベッドで<ruby>過<rt>す</rt></ruby>ごします。<ruby>生活<rt>せいかつ</rt></ruby>の<ruby>全部<rt>ぜんぶ</rt></ruby>を<ruby>手伝<rt>てつだ</rt></ruby>います。<ruby>認知症<rt>にんちしょう</rt></ruby>もあります。</div>
+          </div>
+          <div class="level-row">
+            <div class="level-badge heavy" style="font-size:1rem;padding:8px 14px;min-width:130px;"><ruby>要介護<rt>ようかいご</rt></ruby>5</div>
+            <div class="level-desc" style="font-size:1rem;">ずっとベッドにいます（<ruby>寝<rt>ね</rt></ruby>たきり）。<ruby>全部<rt>ぜんぶ</rt></ruby>の<ruby>生活<rt>せいかつ</rt></ruby>を<ruby>手伝<rt>てつだ</rt></ruby>います。</div>
+          </div>
+        </div>
+        <div class="kp-nav" style="justify-content:flex-start;">
+          <button class="kp-btn" style="background:var(--muted);" onclick="showKpPage(1)">◀ <ruby>表<rt>ひょう</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>る</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card reveal from-right">
+    <div class="card-title">🏥 <ruby>介護<rt>かいご</rt></ruby>サービスの<ruby>種類<rt>しゅるい</rt></ruby></div>
+    <div class="facility-2col">
+      <div class="facility-card">
+        <div style="height:120px;overflow:hidden;"><img src="images/img04.jpg" alt="特養" style="width:100%;height:120px;object-fit:cover;"></div>
+        <div class="facility-info"><span class="facility-tag"><ruby>入所<rt>にゅうしょ</rt></ruby></span><div class="facility-name">🏠 <ruby>特別養護老人ホーム<rt>とくべつようごろうじんほーむ</rt></ruby>（<ruby>特養<rt>とくよう</rt></ruby>）</div><div class="facility-detail"><strong><ruby>定員<rt>ていいん</rt></ruby>：</strong>30〜100<ruby>名<rt>めい</rt></ruby>　<strong><ruby>対象<rt>たいしょう</rt></ruby>：</strong><ruby>要介護<rt>ようかいご</rt></ruby>3<ruby>以上<rt>いじょう</rt></ruby><br>24<ruby>時間介護<rt>じかんかいご</rt></ruby>。<ruby>費用<rt>ひよう</rt></ruby>が<ruby>比較的安<rt>ひかくてきやす</rt></ruby>い。</div></div>
+      </div>
+      <div class="facility-card">
+        <div style="height:120px;overflow:hidden;"><img src="images/img05.jpg" alt="グループホーム" style="width:100%;height:120px;object-fit:cover;"></div>
+        <div class="facility-info"><span class="facility-tag" style="background:#7c3aed;"><ruby>認知症<rt>にんちしょう</rt></ruby></span><div class="facility-name">🏡 グループホーム</div><div class="facility-detail"><strong><ruby>定員<rt>ていいん</rt></ruby>：</strong>5〜9<ruby>名<rt>めい</rt></ruby>　<strong><ruby>対象<rt>たいしょう</rt></ruby>：</strong><ruby>認知症<rt>にんちしょう</rt></ruby>の<ruby>方<rt>かた</rt></ruby><br><ruby>少人数<rt>しょうにんずう</rt></ruby>で<ruby>共同生活<rt>きょうどうせいかつ</rt></ruby>。<ruby>家庭的<rt>かていてき</rt></ruby>な<ruby>雰囲気<rt>ふんいき</rt></ruby>でケア。</div></div>
+      </div>
+      <div class="facility-card">
+        <div style="height:120px;overflow:hidden;"><img src="images/img06.png" alt="デイサービス" style="width:100%;height:120px;object-fit:cover;"></div>
+        <div class="facility-info"><span class="facility-tag" style="background:#6b7280;"><ruby>通所<rt>つうしょ</rt></ruby></span><div class="facility-name">☀️ デイサービス</div><div class="facility-detail"><strong><ruby>定員<rt>ていいん</rt></ruby>：</strong>10〜40<ruby>名<rt>めい</rt></ruby>/<ruby>日<rt>にち</rt></ruby><br><ruby>日中<rt>にっちゅう</rt></ruby>だけ<ruby>来<rt>き</rt></ruby>て<ruby>夕方<rt>ゆうがた</rt></ruby>に<ruby>帰宅<rt>きたく</rt></ruby>。</div></div>
+      </div>
+      <div class="facility-card">
+        <div style="height:120px;overflow:hidden;"><img src="images/img07.png" alt="訪問介護" style="width:100%;height:120px;object-fit:cover;"></div>
+        <div class="facility-info"><span class="facility-tag" style="background:#6b7280;"><ruby>訪問<rt>ほうもん</rt></ruby></span><div class="facility-name">🚗 <ruby>訪問介護<rt>ほうもんかいご</rt></ruby></div><div class="facility-detail"><strong><ruby>対象<rt>たいしょう</rt></ruby>：</strong><ruby>要支援<rt>ようしえん</rt></ruby>1〜<ruby>要介護<rt>ようかいご</rt></ruby>5<br><ruby>自宅<rt>じたく</rt></ruby>を<ruby>訪問<rt>ほうもん</rt></ruby>して<ruby>介護<rt>かいご</rt></ruby>。</div></div>
+      </div>
+    </div>
+
+  </div>
+</div></div>
+<div class="divider"></div>
+
+<!-- SEC3 -->
+<div id="sec3"><div class="section reveal">
+  <span class="section-label">SECTION 03</span>
+  <h2 class="section-title"><ruby>仕事内容<rt>しごとないよう</rt></ruby>・ICT・<ruby>給与<rt>きゅうよ</rt></ruby></h2>
+
+  <!-- VIDEO 1: 仕事内容 -->
+  <div class="video-page reveal">
+    <div class="video-header">
+      <div class="video-num">1</div>
+      <div><div class="video-title"><ruby>介護職員<rt>かいごしょくいん</rt></ruby>の<ruby>仕事内容<rt>しごとないよう</rt></ruby></div></div>
+    </div>
+    <div class="video-body">
+      <div style="margin-bottom:20px;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+        <img src="images/img08.png" alt="1日のスケジュール" style="width:100%;height:auto;display:block;">
+      </div>
+      <div class="work-list">
+        <div class="work-item"><span class="work-icon">🛏</span><div><span class="work-title"><ruby>起床介助<rt>きしょうかいじょ</rt></ruby></span><span class="work-sub"><ruby>朝<rt>あさ</rt></ruby>、<ruby>起<rt>お</rt></ruby>き<ruby>上<rt>あ</rt></ruby>がる・<ruby>着替<rt>きが</rt></ruby>えのサポート</span></div></div>
+        <div class="work-item"><span class="work-icon">🍽</span><div><span class="work-title"><ruby>食事介助<rt>しょくじかいじょ</rt></ruby></span><span class="work-sub"><ruby>配膳<rt>はいぜん</rt></ruby>・<ruby>食<rt>た</rt></ruby>べるサポート・<ruby>摂取量<rt>せっしゅりょう</rt></ruby><ruby>記録<rt>きろく</rt></ruby></span></div></div>
+        <div class="work-item"><span class="work-icon">🚿</span><div><span class="work-title"><ruby>入浴介助<rt>にゅうよくかいじょ</rt></ruby></span><span class="work-sub"><ruby>体<rt>からだ</rt></ruby>を<ruby>洗<rt>あら</rt></ruby>う・<ruby>浴槽<rt>よくそう</rt></ruby>に<ruby>入<rt>はい</rt></ruby>るサポート</span></div></div>
+        <div class="work-item"><span class="work-icon">🚻</span><div><span class="work-title"><ruby>排泄介助<rt>はいせつかいじょ</rt></ruby></span><span class="work-sub">トイレ・オムツのサポート</span></div></div>
+        <div class="work-item"><span class="work-icon">🚶</span><div><span class="work-title"><ruby>移乗<rt>いじょう</rt></ruby>・<ruby>移動介助<rt>いどうかいじょ</rt></ruby></span><span class="work-sub">ベッド↔<ruby>車椅子<rt>くるまいす</rt></ruby>の<ruby>乗<rt>の</rt></ruby>り<ruby>換<rt>か</rt></ruby>え</span></div></div>
+        <div class="work-item"><span class="work-icon">📝</span><div><span class="work-title"><ruby>記録<rt>きろく</rt></ruby>・<ruby>報告<rt>ほうこく</rt></ruby></span><span class="work-sub">タブレットで<ruby>状態<rt>じょうたい</rt></ruby>を<ruby>記録<rt>きろく</rt></ruby>・チームへ<ruby>共有<rt>きょうゆう</rt></ruby></span></div></div>
+        <div class="work-item"><span class="work-icon">🎵</span><div><span class="work-title">レクリエーション</span><span class="work-sub"><ruby>体操<rt>たいそう</rt></ruby>・<ruby>歌<rt>うた</rt></ruby>・ゲームなど</span></div></div>
+        <div class="work-item"><span class="work-icon">🤝</span><div><span class="work-title"><ruby>申し送り<rt>もうしおくり</rt></ruby></span><span class="work-sub"><ruby>次<rt>つぎ</rt></ruby>のスタッフへの<ruby>情報共有<rt>じょうほうきょうゆう</rt></ruby></span></div></div>
+      </div>
+      <div style="font-weight:700;color:var(--navy);margin:14px 0 10px;">🕐 シフトパターン</div>
+      <div class="shift-grid">
+        <div class="shift-card"><div class="shift-name">🌅 <ruby>早番<rt>はやばん</rt></ruby></div><div class="shift-time">7:00〜16:00</div><div class="shift-detail"><ruby>起床<rt>きしょう</rt></ruby>・<ruby>朝食<rt>ちょうしょく</rt></ruby>・<ruby>入浴<rt>にゅうよく</rt></ruby></div></div>
+        <div class="shift-card"><div class="shift-name">☀️ <ruby>日勤<rt>にっきん</rt></ruby></div><div class="shift-time">9:00〜18:00</div><div class="shift-detail"><ruby>昼食<rt>ちゅうしょく</rt></ruby>・レク・<ruby>記録<rt>きろく</rt></ruby></div></div>
+        <div class="shift-card"><div class="shift-name">🌆 <ruby>遅番<rt>おそばん</rt></ruby></div><div class="shift-time">11:00〜20:00</div><div class="shift-detail"><ruby>夕食<rt>ゆうしょく</rt></ruby>・<ruby>就寝介助<rt>しゅうしんかいじょ</rt></ruby></div></div>
+        <div class="shift-card"><div class="shift-name">🌙 <ruby>夜勤<rt>やきん</rt></ruby></div><div class="shift-time">16:00〜翌9:00</div><div class="shift-detail"><ruby>夜間<rt>やかん</rt></ruby><ruby>見守<rt>みまも</rt></ruby>り・<ruby>巡回<rt>じゅんかい</rt></ruby>（<ruby>手当<rt>てあて</rt></ruby>あり）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO 2: ICT -->
+  <div class="video-page reveal from-right">
+    <div class="video-header">
+      <div class="video-num">2</div>
+      <div><div class="video-title">ICT・テクノロジーで<ruby>楽<rt>らく</rt></ruby>になる<ruby>介護<rt>かいご</rt></ruby></div></div>
+    </div>
+    <div class="video-body">
+      <div class="ict-pager">
+        <!-- ICT 1: 見守りセンサー・インカム（2列） -->
+        <div class="ict-page" id="ict-p1">
+          <div style="font-weight:700;color:var(--navy);margin-bottom:10px;font-size:.95rem;">📡 <ruby>見守<rt>みまも</rt></ruby>りセンサー・インカム</div>
+          <div class="ict-grid">
+            <div class="ict-card" style="flex-direction:column;padding:0;overflow:hidden;">
+              <img src="images/img09.png" alt="見守りセンサー" style="width:100%;height:160px;object-fit:cover;display:block;">
+              <div style="padding:14px;"><div class="ict-name"><ruby>見守<rt>みまも</rt></ruby>りセンサー</div><div class="ict-desc">ベッドに<ruby>設置<rt>せっち</rt></ruby>。<ruby>夜間<rt>やかん</rt></ruby>でも<ruby>状態<rt>じょうたい</rt></ruby>を<ruby>自動検知<rt>じどうけんち</rt></ruby></div></div>
+            </div>
+            <div class="ict-card" style="flex-direction:column;padding:0;overflow:hidden;">
+              <img src="images/img10.png" alt="インカム" style="width:100%;height:160px;object-fit:cover;display:block;">
+              <div style="padding:14px;"><div class="ict-name">インカム</div><div class="ict-desc">スタッフ<ruby>同士<rt>どうし</rt></ruby>がすぐに<ruby>連絡<rt>れんらく</rt></ruby>できる<ruby>無線<rt>むせん</rt></ruby></div></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="ict-section-divider">
+
+        <!-- ICT 2: タブレット・ロボット（2列） -->
+        <div class="ict-page" id="ict-p2">
+          <div style="font-weight:700;color:var(--navy);margin-bottom:10px;font-size:.95rem;">💻 タブレット・<ruby>介護<rt>かいご</rt></ruby>ロボット</div>
+          <div class="ict-grid">
+            <div class="ict-card" style="flex-direction:column;padding:0;overflow:hidden;">
+              <img src="images/img11.png" alt="タブレット記録" style="width:100%;height:160px;object-fit:cover;display:block;">
+              <div style="padding:14px;"><div class="ict-name">タブレット<ruby>記録<rt>きろく</rt></ruby></div><div class="ict-desc"><ruby>選<rt>えら</rt></ruby>んでタップするだけ。<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>書<rt>か</rt></ruby>けなくてもOK</div></div>
+            </div>
+            <div class="ict-card" style="flex-direction:column;padding:0;overflow:hidden;">
+              <img src="images/img12.png" alt="介護ロボット" style="width:100%;height:160px;object-fit:cover;display:block;object-position:center 20%;">
+              <div style="padding:14px;"><div class="ict-name"><ruby>介護<rt>かいご</rt></ruby>ロボット</div><div class="ict-desc"><ruby>移乗<rt>いじょう</rt></ruby>・<ruby>入浴<rt>にゅうよく</rt></ruby>をサポート。<ruby>腰<rt>こし</rt></ruby>への<ruby>負担<rt>ふたん</rt></ruby>を<ruby>軽減<rt>けいげん</rt></ruby></div></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="ict-section-divider">
+
+        <!-- ICT 3: 眠りスキャン -->
+        <div class="ict-page" id="ict-p3">
+          <div style="font-weight:700;color:var(--navy);margin-bottom:12px;font-size:.95rem;">🛏️ <ruby>眠<rt>ねむ</rt></ruby>りスキャン</div>
+          <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
+            <img src="images/img13.png" alt="眠りスキャン" style="width:100%;height:auto;display:block;max-height:280px;object-fit:cover;">
+          </div>
+          <div style="background:#eaf4fb;border-radius:10px;padding:14px 16px;">
+            <div style="font-weight:700;color:var(--primary);margin-bottom:6px;">センサー＋<ruby>管理画面<rt>かんりがめん</rt></ruby></div>
+            <div style="font-size:.9rem;line-height:1.7;color:var(--text);">ベッドの<ruby>下<rt>した</rt></ruby>に<ruby>置<rt>お</rt></ruby>くだけ。<ruby>体<rt>からだ</rt></ruby>に<ruby>触<rt>ふ</rt></ruby>れずに<ruby>呼吸数<rt>こきゅうすう</rt></ruby>・<ruby>心拍<rt>しんぱく</rt></ruby>・<ruby>睡眠状態<rt>すいみんじょうたい</rt></ruby>をリアルタイムで<ruby>確認<rt>かくにん</rt></ruby>。<ruby>夜間巡回<rt>やかんじゅんかい</rt></ruby>の<ruby>負担<rt>ふたん</rt></ruby>が<ruby>激減<rt>げきげん</rt></ruby>。</div>
+          </div>
+        </div>
+      </div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=%E4%BB%8B%E8%AD%B7+ICT+%E8%A6%8B%E5%AE%88%E3%82%8A%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC" target="_blank">🎬 YouTube で<ruby>映像<rt>えいぞう</rt></ruby>を<ruby>見<rt>み</rt></ruby>る</a>
+    </div>
+  </div>
+
+  <!-- VIDEO 3: 給与 -->
+  <div class="video-page reveal">
+    <div class="video-header">
+      <div class="video-num">3</div>
+      <div><div class="video-title">💰 <ruby>給与<rt>きゅうよ</rt></ruby>・<ruby>時給<rt>じきゅう</rt></ruby>のリアル（<ruby>神奈川県<rt>かながわけん</rt></ruby>）</div></div>
+    </div>
+    <div class="video-body" style="padding-top:20px;">
+      <!-- 給与サマリー -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+        <div style="background:linear-gradient(135deg,#1a5276,#2e86c1);border-radius:10px;padding:16px;color:#fff;text-align:center;">
+          <div style="font-size:.82em;opacity:.85;margin-bottom:4px;">パート・アルバイト <ruby>平均時給<rt>へいきんじきゅう</rt></ruby></div>
+          <div style="font-size:1.8rem;font-weight:900;">約1,263<span style="font-size:1rem;">円</span></div>
+        </div>
+        <div style="background:linear-gradient(135deg,#117a65,#1abc9c);border-radius:10px;padding:16px;color:#fff;text-align:center;">
+          <div style="font-size:.82em;opacity:.85;margin-bottom:4px;"><ruby>正社員<rt>せいしゃいん</rt></ruby> <ruby>平均月給<rt>へいきんげっきゅう</rt></ruby></div>
+          <div style="font-size:1.8rem;font-weight:900;">約23〜31<span style="font-size:1rem;">万円</span></div>
+        </div>
+      </div>
+      <!-- 正社員給与の内訳 -->
+      <div style="font-weight:700;color:var(--navy);margin-bottom:10px;">📋 <ruby>正社員<rt>せいしゃいん</rt></ruby>の<ruby>給与<rt>きゅうよ</rt></ruby>の<ruby>内訳<rt>うちわけ</rt></ruby>（<ruby>神奈川県<rt>かながわけん</rt></ruby>の<ruby>目安<rt>めやす</rt></ruby>）</div>
+      <table style="width:100%;border-collapse:collapse;font-size:.9em;">
+        <thead>
+          <tr style="background:var(--navy);color:#fff;">
+            <th style="padding:10px 14px;text-align:left;border-radius:6px 0 0 0;"><ruby>種類<rt>しゅるい</rt></ruby></th>
+            <th style="padding:10px 14px;text-align:left;"><ruby>内容<rt>ないよう</rt></ruby></th>
+            <th style="padding:10px 14px;text-align:right;border-radius:0 6px 0 0;"><ruby>金額<rt>きんがく</rt></ruby>の<ruby>目安<rt>めやす</rt></ruby></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 14px;"><span style="display:inline-block;width:10px;height:10px;background:#2e86c1;border-radius:50%;margin-right:6px;"></span><ruby>基本給<rt>きほんきゅう</rt></ruby></td>
+            <td style="padding:10px 14px;color:var(--muted);"><ruby>毎月<rt>まいつき</rt></ruby>もらう<ruby>基本<rt>きほん</rt></ruby>のお<ruby>金<rt>かね</rt></ruby></td>
+            <td style="padding:10px 14px;text-align:right;font-weight:700;">約18〜22<ruby>万円<rt>まんえん</rt></ruby></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:#f8fafc;">
+            <td style="padding:10px 14px;"><span style="display:inline-block;width:10px;height:10px;background:#1abc9c;border-radius:50%;margin-right:6px;"></span><ruby>処遇改善加算<rt>しょぐうかいぜんかさん</rt></ruby></td>
+            <td style="padding:10px 14px;color:var(--muted);"><ruby>国<rt>くに</rt></ruby>が<ruby>介護職員<rt>かいごしょくいん</rt></ruby>のために<ruby>追加<rt>ついか</rt></ruby>したお<ruby>金<rt>かね</rt></ruby></td>
+            <td style="padding:10px 14px;text-align:right;font-weight:700;">約1〜3<ruby>万円<rt>まんえん</rt></ruby></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 14px;"><span style="display:inline-block;width:10px;height:10px;background:#f59e0b;border-radius:50%;margin-right:6px;"></span><ruby>夜勤手当<rt>やきんてあて</rt></ruby></td>
+            <td style="padding:10px 14px;color:var(--muted);">1<ruby>回<rt>かい</rt></ruby>につき（<ruby>月<rt>つき</rt></ruby>4〜6<ruby>回<rt>かい</rt></ruby><ruby>程度<rt>ていど</rt></ruby>）</td>
+            <td style="padding:10px 14px;text-align:right;font-weight:700;">5,000〜10,000<ruby>円<rt>えん</rt></ruby></td>
+          </tr>
+          <tr style="background:#f8fafc;">
+            <td style="padding:10px 14px;"><span style="display:inline-block;width:10px;height:10px;background:#f97316;border-radius:50%;margin-right:6px;"></span><ruby>資格手当<rt>しかくてあて</rt></ruby></td>
+            <td style="padding:10px 14px;color:var(--muted);"><ruby>初任者研修<rt>しょにんしゃけんしゅう</rt></ruby> / <ruby>介護福祉士<rt>かいごふくしし</rt></ruby></td>
+            <td style="padding:10px 14px;text-align:right;font-weight:700;">5,000 / 10,000〜20,000<ruby>円<rt>えん</rt></ruby></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="source-note">出典：<ruby>厚生労働省<rt>こうせいろうどうしょう</rt></ruby>「<ruby>介護労働実態調査<rt>かいごろうどうじったいちょうさ</rt></ruby>」令和5年度 / 神奈川県ハローワーク求人情報</p>
+    </div>
+  </div>
+</div></div>
+<div class="divider"></div>
+
+<!-- SEC4 -->
+<div id="sec4" class="section-wrap-bg"><div class="section reveal">
+  <span class="section-label">SECTION 04</span>
+  <h2 class="section-title">キャリアアップと<ruby>資格取得<rt>しかくしゅとく</rt></ruby></h2>
+  <div class="card reveal">
+    <div class="card-title">🎓 <ruby>資格<rt>しかく</rt></ruby>とキャリアパス</div>
+    <div class="career-flow">
+      <div class="career-step"><h4><ruby>無資格<rt>むしかく</rt></ruby>・<ruby>未経験<rt>みけいけん</rt></ruby>でOK</h4><p>まずここからスタート</p></div>
+      <div class="career-arrow">→</div>
+      <div class="career-step"><h4><ruby>介護職員初任者研修<rt>かいごしょくいんしょにんしゃけんしゅう</rt></ruby></h4><p>130<ruby>時間<rt>じかん</rt></ruby>・<ruby>最短<rt>さいたん</rt></ruby>約3か<ruby>月<rt>げつ</rt></ruby></p></div>
+      <div class="career-arrow">→</div>
+      <div class="career-step"><h4><ruby>実務者研修<rt>じつむしゃけんしゅう</rt></ruby></h4><p>450<ruby>時間<rt>じかん</rt></ruby>・<ruby>実務<rt>じつむ</rt></ruby>3<ruby>年<rt>ねん</rt></ruby>で<ruby>受験資格<rt>じゅけんしかく</rt></ruby></p></div>
+      <div class="career-arrow">→</div>
+      <div class="career-step"><h4><ruby>介護福祉士<rt>かいごふくしし</rt></ruby>（<ruby>国家資格<rt>こっかしかく</rt></ruby>）</h4><p><ruby>在留資格<rt>ざいりゅうしかく</rt></ruby>「<ruby>介護<rt>かいご</rt></ruby>」<ruby>取得可能<rt>しゅとくかのう</rt></ruby></p></div>
+      <div class="career-arrow">→</div>
+      <div class="career-step highlight"><h4><ruby>永住<rt>えいじゅう</rt></ruby>・<ruby>家族呼寄<rt>かぞくよびよせ</rt></ruby>へ</h4><p><ruby>介護福祉士<rt>かいごふくしし</rt></ruby>で<ruby>永住<rt>えいじゅう</rt></ruby>の<ruby>道<rt>みち</rt></ruby>も</p></div>
+    </div>
+    <p style="font-size:.88rem;color:var(--muted);margin-top:14px;">※ <ruby>介護福祉士<rt>かいごふくしし</rt></ruby>の<ruby>国家資格<rt>こっかしかく</rt></ruby>を<ruby>取得<rt>しゅとく</rt></ruby>すると、<ruby>在留資格<rt>ざいりゅうしかく</rt></ruby>「<ruby>介護<rt>かいご</rt></ruby>」を<ruby>取得<rt>しゅとく</rt></ruby>でき、<ruby>更新<rt>こうしん</rt></ruby>に<ruby>上限<rt>じょうげん</rt></ruby>がなくなります。</p>
+  </div>
+
+  <div class="card reveal from-right">
+    <div class="card-title">📸 <ruby>職場<rt>しょくば</rt></ruby>の<ruby>様子<rt>ようす</rt></ruby>（2<ruby>枚<rt>まい</rt></ruby>ずつ<ruby>表示<rt>ひょうじ</rt></ruby>）</div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- JSで動的に生成 -->
+    </div>
+  </div>
+</div></div>
+<div class="divider"></div>
+
+<!-- SEC5 -->
+<div id="sec5"><div class="section reveal">
+  <span class="section-label">SECTION 05</span>
+  <h2 class="section-title"><ruby>働<rt>はたら</rt></ruby>くための<ruby>言葉<rt>ことば</rt></ruby>と「<ruby>報<rt>ほう</rt></ruby>・<ruby>連<rt>れん</rt></ruby>・<ruby>相<rt>そう</rt></ruby>」</h2>
+
+  <!-- 報連相：situation-boxスタイル -->
+  <div class="card reveal">
+    <div class="card-title">🗣️ <ruby>報告<rt>ほうこく</rt></ruby>・<ruby>連絡<rt>れんらく</rt></ruby>・<ruby>相談<rt>そうだん</rt></ruby>（<ruby>報連相<rt>ほうれんそう</rt></ruby>）の<ruby>例<rt>れい</rt></ruby></div>
+
+    <!-- 報連相カード：タイトルバー付き・翻訳トグル -->
+    <!-- 報告例：N5〜N1レベル別 -->
+    <div class="hourenso-card">
+      <div class="hourenso-header h-report">
+        <span class="hourenso-icon">📢</span>
+        <span class="hourenso-type"><ruby>報告<rt>ほうこく</rt></ruby>の<ruby>例<rt>れい</rt></ruby>（N5〜N1）</span>
+      </div>
+      <div class="hourenso-body">
+        <div class="hourenso-scene">📍 <ruby>場面<rt>ばめん</rt></ruby>：<ruby>利用者<rt>りようしゃ</rt></ruby>の<ruby>体調変化<rt>たいちょうへんか</rt></ruby>を<ruby>上司<rt>じょうし</rt></ruby>に<ruby>報告<rt>ほうこく</rt></ruby>する</div>
+
+        <!-- 基になっている報告文＋翻訳 (sticky固定) -->
+        <div class="sticky-report-wrap">
+          <div class="sticky-report-box">
+            <div class="sticky-report-label">📌 <ruby>基本<rt>きほん</rt></ruby>の<ruby>報告文<rt>ほうこくぶん</rt></ruby>（N2〜N1レベル）</div>
+            「〇〇さんは<ruby>今朝<rt>けさ</rt></ruby>から<ruby>食欲<rt>しょくよく</rt></ruby>がなく、<ruby>朝食<rt>ちょうしょく</rt></ruby>は3<ruby>割<rt>わり</rt></ruby>ほどしか<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がっていません。<ruby>昨夜<rt>さくや</rt></ruby>から<ruby>咳<rt>せき</rt></ruby>もみられており、<ruby>体温<rt>たいおん</rt></ruby>を<ruby>測<rt>はか</rt></ruby>ったところ37.8<ruby>度<rt>ど</rt></ruby>の<ruby>発熱<rt>はつねつ</rt></ruby>がありました。<ruby>現在<rt>げんざい</rt></ruby>は<ruby>寝室<rt>しんしつ</rt></ruby>で<ruby>寝<rt>ね</rt></ruby>ています。」
+          </div>
+        </div>
+        <div class="sticky-report-scroll">
+        <div style="background:#0d2137;border-radius:0 0 10px 10px;padding:14px 20px;margin-bottom:18px;">
+          <div style="font-size:.78em;color:rgba(255,255,255,.65);margin-bottom:10px;font-weight:700;">🌍 8言語翻訳</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;">
+              <div style="font-size:.72em;color:rgba(255,255,255,.6);margin-bottom:3px;">🇪🇸 Español</div>
+              <div style="font-size:.82em;color:#fff;line-height:1.5;">〇〇 no ha tenido apetito desde esta mañana y apenas ha comido el 30% del desayuno. Desde anoche también tiene tos; la temperatura fue 37.8°. Actualmente está descansando en su habitación.</div>
+            </div>
+            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;">
+              <div style="font-size:.72em;color:rgba(255,255,255,.6);margin-bottom:3px;">🇧🇷 Português</div>
+              <div style="font-size:.82em;color:#fff;line-height:1.5;">〇〇 não tem apetite desde esta manhã e mal comeu 30% do café. Desde ontem à noite também tossindo; temperatura 37,8°. Descansando no quarto agora.</div>
+            </div>
+            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;">
+              <div style="font-size:.72em;color:rgba(255,255,255,.6);margin-bottom:3px;">🇨🇳 中文</div>
+              <div style="font-size:.82em;color:#fff;line-height:1.5;">〇〇从今早起食欲不振，早饭仅用了约三成。从昨晚起亦有咳嗽，测体温为37.8度发烧。目前在寝室休息。</div>
+            </div>
+            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;">
+              <div style="font-size:.72em;color:rgba(255,255,255,.6);margin-bottom:3px;">🇵🇭 Filipino</div>
+              <div style="font-size:.82em;color:#fff;line-height:1.5;">Si 〇〇 ay walang gana sa pagkain mula ngayong umaga at kumain lamang ng 30%. May ubo rin mula kagabi; lagnat 37.8°. Nagpapahinga sa silid ngayon.</div>
+            </div>
+            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;">
+              <div style="font-size:.72em;color:rgba(255,255,255,.6);margin-bottom:3px;">🇷🇺 Русский</div>
+              <div style="font-size:.82em;color:#fff;line-height:1.5;">С утра у 〇〇 нет аппетита, съел(а) лишь около 30% завтрака. С вчера также кашель; температура 37.8°. Сейчас отдыхает в комнате.</div>
+            </div>
+            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;">
+              <div style="font-size:.72em;color:rgba(255,255,255,.6);margin-bottom:3px;">🇸🇳 Français</div>
+              <div style="font-size:.82em;color:#fff;line-height:1.5;">〇〇 n'a pas d'appétit depuis ce matin et n'a consommé qu'environ 30%. Depuis hier soir, toux également; fièvre 37,8°. Se repose dans sa chambre maintenant.</div>
+            </div>
+            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;">
+              <div style="font-size:.72em;color:rgba(255,255,255,.6);margin-bottom:3px;">🇹🇭 ภาษาไทย</div>
+              <div style="font-size:.82em;color:#fff;line-height:1.5;">〇〇ไม่มีความอยากอาหารตั้งแต่เช้า รับประทานได้ประมาณ 30% มีอาการไอตั้งแต่คืนที่แล้ว วัดไข้ได้ 37.8° ตอนนี้พักอยู่ในห้องนอน</div>
+            </div>
+            <div style="background:rgba(255,255,255,.08);border-radius:7px;padding:8px 10px;">
+              <div style="font-size:.72em;color:rgba(255,255,255,.6);margin-bottom:3px;">🇺🇸 English</div>
+              <div style="font-size:.82em;color:#fff;line-height:1.5;">〇〇 has had no appetite since this morning and barely ate 30% of breakfast. Coughing since last night; temperature was 37.8°. Currently resting in their room.</div>
+            </div>
+          </div>
+        </div>
+        </div><!-- /sticky-report-scroll -->
+        <p style="font-size:.88em;color:var(--muted);margin:0 0 14px;">👆 <ruby>各<rt>かく</rt></ruby>レベルをクリックすると<ruby>展開<rt>てんかい</rt></ruby>・<ruby>翻訳<rt>ほんやく</rt></ruby>が<ruby>見<rt>み</rt></ruby>えます</p>
+
+        <!-- N5 -->
+        <div class="nlevel-report-item" id="nr-n5">
+          <div class="nlevel-report-header" onclick="toggleNReport('n5')">
+            <span class="nlevel-report-badge" style="background:var(--primary);">N5</span>
+            <span class="nlevel-report-label"><ruby>基本<rt>きほん</rt></ruby>の<ruby>単語<rt>たんご</rt></ruby>だけ</span>
+            <span class="nlevel-report-arrow">▼</span>
+          </div>
+          <div class="nlevel-report-body" id="nrb-n5">
+            <div class="nlevel-report-speech">「〇〇さんは　あさから　ごはんを　<ruby>食<rt>た</rt></ruby>べません。<ruby>熱<rt>ねつ</rt></ruby>があります。<ruby>今<rt>いま</rt></ruby>、<ruby>寝<rt>ね</rt></ruby>ています。」</div>
+            <button class="tr-toggle-btn" style="background:var(--accent);border:none;margin-top:8px;cursor:pointer;padding:5px 14px;border-radius:20px;color:#fff;font-size:.82em;" onclick="toggleNrTr(this)">🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼</button>
+            <div class="nr-trans" style="display:none;margin-top:10px;">
+              <div class="tr-grid">
+                <div class="tr-cell"><span class="tr-flag">🇪🇸</span><span class="tr-lang">ES</span><span class="tr-txt">〇〇 no come desde esta mañana. Tiene fiebre. Ahora está durmiendo.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇧🇷</span><span class="tr-lang">PT</span><span class="tr-txt">〇〇 não come desde esta manhã. Tem febre. Agora está dormindo.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇨🇳</span><span class="tr-lang">ZH</span><span class="tr-txt">〇〇从今早就不吃饭。有发烧。现在在睡觉。</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇵🇭</span><span class="tr-lang">TL</span><span class="tr-txt">Si 〇〇 ay hindi kumakain mula ngayong umaga. May lagnat. Natutulog na ngayon.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇷🇺</span><span class="tr-lang">RU</span><span class="tr-txt">〇〇 не ест с утра. Есть температура. Сейчас спит.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇸🇳</span><span class="tr-lang">FR</span><span class="tr-txt">〇〇 ne mange pas depuis ce matin. A de la fièvre. Dort maintenant.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇹🇭</span><span class="tr-lang">TH</span><span class="tr-txt">〇〇ไม่ทานข้าวตั้งแต่เช้า มีไข้ ตอนนี้กำลังนอนหลับ</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇺🇸</span><span class="tr-lang">EN</span><span class="tr-txt">〇〇 hasn't eaten since this morning. Has a fever. Currently sleeping.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- N4 -->
+        <div class="nlevel-report-item" id="nr-n4">
+          <div class="nlevel-report-header" onclick="toggleNReport('n4')">
+            <span class="nlevel-report-badge" style="background:var(--primary);">N4</span>
+            <span class="nlevel-report-label"><ruby>短<rt>みじか</rt></ruby>い<ruby>文<rt>ぶん</rt></ruby>で<ruby>伝<rt>つた</rt></ruby>える</span>
+            <span class="nlevel-report-arrow">▼</span>
+          </div>
+          <div class="nlevel-report-body" id="nrb-n4">
+            <div class="nlevel-report-speech">「〇〇さんは　<ruby>今朝<rt>けさ</rt></ruby>から　<ruby>食欲<rt>しょくよく</rt></ruby>がありません。<ruby>朝食<rt>ちょうしょく</rt></ruby>は　3<ruby>割<rt>わり</rt></ruby>しか　<ruby>食<rt>た</rt></ruby>べませんでした。<ruby>熱<rt>ねつ</rt></ruby>が　37.8<ruby>度<rt>ど</rt></ruby>あります。<ruby>今<rt>いま</rt></ruby>、<ruby>部屋<rt>へや</rt></ruby>で　<ruby>寝<rt>ね</rt></ruby>ています。」</div>
+            <button class="tr-toggle-btn" style="background:var(--accent);border:none;margin-top:8px;cursor:pointer;padding:5px 14px;border-radius:20px;color:#fff;font-size:.82em;" onclick="toggleNrTr(this)">🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼</button>
+            <div class="nr-trans" style="display:none;margin-top:10px;">
+              <div class="tr-grid">
+                <div class="tr-cell"><span class="tr-flag">🇪🇸</span><span class="tr-lang">ES</span><span class="tr-txt">〇〇 no tiene apetito desde esta mañana. Solo comió el 30% del desayuno. Tiene 37.8° de fiebre. Ahora está descansando en su habitación.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇧🇷</span><span class="tr-lang">PT</span><span class="tr-txt">〇〇 não tem apetite desde esta manhã. Comeu apenas 30% do café. Tem febre de 37.8°. Agora está descansando no quarto.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇨🇳</span><span class="tr-lang">ZH</span><span class="tr-txt">〇〇从今早起就没有食欲。早饭只吃了三成。体温37.8度有发烧。现在在房间里睡觉。</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇵🇭</span><span class="tr-lang">TL</span><span class="tr-txt">Si 〇〇 ay walang gana sa pagkain mula ngayong umaga. Kumain lang ng 30% ng almusal. May lagnat na 37.8°. Ngayon ay nagpapahinga sa kuwarto.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇷🇺</span><span class="tr-lang">RU</span><span class="tr-txt">〇〇 с утра без аппетита. Съел(а) только 30% завтрака. Температура 37.8°. Сейчас отдыхает в комнате.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇸🇳</span><span class="tr-lang">FR</span><span class="tr-txt">〇〇 n'a pas d'appétit depuis ce matin. A mangé seulement 30% du petit-déjeuner. A 37,8° de fièvre. Se repose dans sa chambre maintenant.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇹🇭</span><span class="tr-lang">TH</span><span class="tr-txt">〇〇ไม่ค่อยอยากอาหารตั้งแต่เช้า ทานอาหารเช้าได้แค่ 30% มีไข้ 37.8° ตอนนี้นอนพักอยู่ในห้อง</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇺🇸</span><span class="tr-lang">EN</span><span class="tr-txt">〇〇 has had no appetite since this morning. Only ate 30% of breakfast. Has a fever of 37.8°. Currently resting in their room.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- N3 -->
+        <div class="nlevel-report-item" id="nr-n3">
+          <div class="nlevel-report-header" onclick="toggleNReport('n3')">
+            <span class="nlevel-report-badge" style="background:var(--primary);">N3</span>
+            <span class="nlevel-report-label"><ruby>介護<rt>かいご</rt></ruby>の<ruby>言葉<rt>ことば</rt></ruby>を<ruby>使<rt>つか</rt></ruby>って<ruby>報告<rt>ほうこく</rt></ruby>する</span>
+            <span class="nlevel-report-arrow">▼</span>
+          </div>
+          <div class="nlevel-report-body" id="nrb-n3">
+            <div class="nlevel-report-speech">「〇〇さんは<ruby>今朝<rt>けさ</rt></ruby>から<ruby>食欲<rt>しょくよく</rt></ruby>がなく、<ruby>朝食<rt>ちょうしょく</rt></ruby>は3<ruby>割<rt>わり</rt></ruby>しか<ruby>摂取<rt>せっしゅ</rt></ruby>できませんでした。<ruby>昨夜<rt>さくや</rt></ruby>から<ruby>咳<rt>せき</rt></ruby>もあり、<ruby>検温<rt>けんおん</rt></ruby>したところ37.8<ruby>度<rt>ど</rt></ruby>の<ruby>発熱<rt>はつねつ</rt></ruby>がありました。<ruby>現在<rt>げんざい</rt></ruby>は<ruby>臥床中<rt>がしょうちゅう</rt></ruby>です。」</div>
+            <button class="tr-toggle-btn" style="background:var(--accent);border:none;margin-top:8px;cursor:pointer;padding:5px 14px;border-radius:20px;color:#fff;font-size:.82em;" onclick="toggleNrTr(this)">🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼</button>
+            <div class="nr-trans" style="display:none;margin-top:10px;">
+              <div class="tr-grid">
+                <div class="tr-cell"><span class="tr-flag">🇪🇸</span><span class="tr-lang">ES</span><span class="tr-txt">〇〇 no tiene apetito desde esta mañana y solo pudo ingerir el 30% del desayuno. También tiene tos desde anoche; al tomarle la temperatura se registró 37.8° de fiebre. Actualmente está en cama.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇧🇷</span><span class="tr-lang">PT</span><span class="tr-txt">〇〇 está sem apetite desde esta manhã e conseguiu ingerir apenas 30% do café. Também tem tosse desde ontem à noite; ao medir a temperatura, foi registrado 37.8° de febre. Atualmente está acamado(a).</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇨🇳</span><span class="tr-lang">ZH</span><span class="tr-txt">〇〇从今早起食欲不振，早饭只摄取了三成。从昨晚开始有咳嗽，测体温发现有37.8度的发烧。目前卧床休息中。</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇵🇭</span><span class="tr-lang">TL</span><span class="tr-txt">Si 〇〇 ay walang gana sa pagkain mula ngayong umaga at nakakain lamang ng 30% ng almusal. Mayroon ding ubo mula kagabi; nang sukatin ang temperatura ay may lagnat na 37.8°. Kasalukuyang nakahiga.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇷🇺</span><span class="tr-lang">RU</span><span class="tr-txt">У 〇〇 с утра нет аппетита, съел(а) лишь 30% завтрака. С вчерашнего вечера также кашель; при измерении температуры — 37.8°. В настоящее время лежит в постели.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇸🇳</span><span class="tr-lang">FR</span><span class="tr-txt">〇〇 n'a pas d'appétit depuis ce matin et n'a pu ingérer que 30% du petit-déjeuner. Tousse également depuis hier soir; la prise de température a révélé 37,8° de fièvre. Actuellement alité(e).</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇹🇭</span><span class="tr-lang">TH</span><span class="tr-txt">〇〇ไม่มีความอยากอาหารตั้งแต่เช้า รับประทานอาหารเช้าได้เพียง 30% มีอาการไอตั้งแต่คืนที่แล้ว วัดอุณหภูมิแล้วพบว่ามีไข้ 37.8° ปัจจุบันนอนพักอยู่บนเตียง</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇺🇸</span><span class="tr-lang">EN</span><span class="tr-txt">〇〇 has had no appetite since this morning and was only able to consume 30% of breakfast. Has also been coughing since last night; temperature check showed a fever of 37.8°. Currently bedridden.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- N2/N1 -->
+        <div class="nlevel-report-item" id="nr-n1">
+          <div class="nlevel-report-header" onclick="toggleNReport('n1')">
+            <span class="nlevel-report-badge" style="background:var(--primary);">N2〜N1</span>
+            <span class="nlevel-report-label"><ruby>敬語<rt>けいご</rt></ruby>と<ruby>専門用語<rt>せんもんようご</rt></ruby>で<ruby>正確<rt>せいかく</rt></ruby>に<ruby>報告<rt>ほうこく</rt></ruby>する</span>
+            <span class="nlevel-report-arrow">▼</span>
+          </div>
+          <div class="nlevel-report-body" id="nrb-n1">
+            <div class="nlevel-report-speech">「〇〇さんは<ruby>今朝<rt>けさ</rt></ruby>から<ruby>食欲<rt>しょくよく</rt></ruby>がなく、<ruby>朝食<rt>ちょうしょく</rt></ruby>は3<ruby>割<rt>わり</rt></ruby>ほどしか<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がっていません。<ruby>昨夜<rt>さくや</rt></ruby>から<ruby>咳<rt>せき</rt></ruby>もみられており、<ruby>体温<rt>たいおん</rt></ruby>を<ruby>測<rt>はか</rt></ruby>ったところ37.8<ruby>度<rt>ど</rt></ruby>の<ruby>発熱<rt>はつねつ</rt></ruby>がありました。<ruby>現在<rt>げんざい</rt></ruby>は<ruby>寝室<rt>しんしつ</rt></ruby>で<ruby>寝<rt>ね</rt></ruby>ています。」</div>
+            <button class="tr-toggle-btn" style="background:var(--accent);border:none;margin-top:8px;cursor:pointer;padding:5px 14px;border-radius:20px;color:#fff;font-size:.82em;" onclick="toggleNrTr(this)">🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼</button>
+            <div class="nr-trans" style="display:none;margin-top:10px;">
+              <div class="tr-grid">
+                <div class="tr-cell"><span class="tr-flag">🇪🇸</span><span class="tr-lang">ES</span><span class="tr-txt">〇〇 no ha tenido apetito desde esta mañana y apenas ha comido el 30% del desayuno. Desde anoche también se observa tos y, al tomar la temperatura, se registró una fiebre de 37.8°. Actualmente está descansando en su habitación.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇧🇷</span><span class="tr-lang">PT</span><span class="tr-txt">〇〇 não tem apetite desde esta manhã e mal comeu 30% do café da manhã. Desde ontem à noite também apresenta tosse e, ao verificar a temperatura, foi constatada febre de 37.8°. Atualmente está descansando em seu quarto.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇨🇳</span><span class="tr-lang">ZH</span><span class="tr-txt">〇〇从今早起食欲不振，早饭仅用了约三成。从昨晚起亦可见咳嗽，测量体温后发现有37.8度的发烧。目前正在寝室休息。</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇵🇭</span><span class="tr-lang">TL</span><span class="tr-txt">Si 〇〇 ay walang gana sa pagkain mula ngayong umaga at kumain lamang ng halos 30% ng almusal. Mula kagabi ay may ubo rin na napansin, at nang sukatin ang temperatura ay natagpuang may lagnat na 37.8°. Kasalukuyang nagpapahinga sa silid.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇷🇺</span><span class="tr-lang">RU</span><span class="tr-txt">С утра у 〇〇 нет аппетита, съел(а) лишь около 30% завтрака. С вчерашнего вечера также отмечается кашель; при измерении температуры зафиксирована лихорадка 37.8°. В настоящее время отдыхает в комнате.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇸🇳</span><span class="tr-lang">FR</span><span class="tr-txt">〇〇 n'a pas d'appétit depuis ce matin et n'a consommé qu'environ 30% du petit-déjeuner. Depuis hier soir, on observe également de la toux et, à la prise de température, une fièvre de 37,8° a été constatée. Actuellement en train de se reposer dans sa chambre.</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇹🇭</span><span class="tr-lang">TH</span><span class="tr-txt">〇〇ไม่มีความอยากอาหารตั้งแต่เช้า และรับประทานอาหารเช้าได้เพียงประมาณ 30% ตั้งแต่คืนที่แล้วพบว่ามีอาการไอด้วย และเมื่อวัดอุณหภูมิพบว่ามีไข้ 37.8° ขณะนี้กำลังพักผ่อนอยู่ในห้องนอน</span></div>
+                <div class="tr-cell"><span class="tr-flag">🇺🇸</span><span class="tr-lang">EN</span><span class="tr-txt">〇〇 has had no appetite since this morning and has barely eaten about 30% of breakfast. Since last night, coughing has also been observed, and upon taking their temperature, a fever of 37.8° was confirmed. Currently resting in their room.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hourenso-card">
+      <div class="hourenso-header h-contact">
+        <span class="hourenso-icon">📞</span>
+        <span class="hourenso-type"><ruby>連絡<rt>れんらく</rt></ruby></span>
+        <button class="tr-toggle-btn" onclick="toggleTr(this)">🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼</button>
+      </div>
+      <div class="hourenso-body">
+        <div class="hourenso-scene">📍 <ruby>場面<rt>ばめん</rt></ruby>：<ruby>家族<rt>かぞく</rt></ruby>からの<ruby>電話<rt>でんわ</rt></ruby>を<ruby>同僚<rt>どうりょう</rt></ruby>に<ruby>伝<rt>つた</rt></ruby>える</div>
+        <div class="hourenso-speech">「〇〇さんのご<ruby>家族<rt>かぞく</rt></ruby>から、<ruby>施設<rt>しせつ</rt></ruby>に<ruby>来<rt>き</rt></ruby>たいとお<ruby>電話<rt>でんわ</rt></ruby>がありました。<ruby>折<rt>お</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>しをお<ruby>願<rt>ねが</rt></ruby>いできますか。」</div>
+        <div class="hourenso-trans" style="display:none;">
+          <div class="tr-grid">
+            <div class="tr-cell"><span class="tr-flag">🇪🇸</span><span class="tr-lang">ES</span><span class="tr-txt">La familia de 〇〇 llamó para venir. ¿Pueden devolver la llamada?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇧🇷</span><span class="tr-lang">PT</span><span class="tr-txt">A família de 〇〇 ligou querendo vir. Podem retornar a ligação?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇨🇳</span><span class="tr-lang">ZH</span><span class="tr-txt">〇〇的家属来电说想来探望。麻烦回拨一下好吗？</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇵🇭</span><span class="tr-lang">TL</span><span class="tr-txt">Tumawag ang pamilya ni 〇〇 na gustong pumunta. Maaari bang tumawag muli?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇷🇺</span><span class="tr-lang">RU</span><span class="tr-txt">Семья 〇〇 позвонила и хочет приехать. Не могли бы вы перезвонить?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇸🇳</span><span class="tr-lang">FR</span><span class="tr-txt">La famille de 〇〇 a appelé pour venir. Pourriez-vous rappeler?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇹🇭</span><span class="tr-lang">TH</span><span class="tr-txt">ครอบครัวของ〇〇โทรมาบอกว่าอยากมาเยี่ยม ช่วยโทรกลับได้ไหมครับ/ค่ะ</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇺🇸</span><span class="tr-lang">EN</span><span class="tr-txt">〇〇's family called wanting to visit. Could you please call them back?</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hourenso-card">
+      <div class="hourenso-header h-consult">
+        <span class="hourenso-icon">💬</span>
+        <span class="hourenso-type"><ruby>相談<rt>そうだん</rt></ruby></span>
+        <button class="tr-toggle-btn" onclick="toggleTr(this)">🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼</button>
+      </div>
+      <div class="hourenso-body">
+        <div class="hourenso-scene">📍 <ruby>場面<rt>ばめん</rt></ruby>：<ruby>利用者<rt>りようしゃ</rt></ruby>が<ruby>服薬<rt>ふくやく</rt></ruby>を<ruby>拒否<rt>きょひ</rt></ruby>するので<ruby>上司<rt>じょうし</rt></ruby>に<ruby>相談<rt>そうだん</rt></ruby>する</div>
+        <div class="hourenso-speech">「〇〇さんが<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みたがらないのですが、どのように<ruby>対応<rt>たいおう</rt></ruby>すればよいでしょうか？」</div>
+        <div class="hourenso-trans" style="display:none;">
+          <div class="tr-grid">
+            <div class="tr-cell"><span class="tr-flag">🇪🇸</span><span class="tr-lang">ES</span><span class="tr-txt">〇〇 no quiere tomar la medicina. ¿Cómo debo manejarlo?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇧🇷</span><span class="tr-lang">PT</span><span class="tr-txt">〇〇 não quer tomar o remédio. Como devo lidar com isso?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇨🇳</span><span class="tr-lang">ZH</span><span class="tr-txt">〇〇不愿意吃药，该怎么处理呢？</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇵🇭</span><span class="tr-lang">TL</span><span class="tr-txt">Ayaw uminom ng gamot si 〇〇. Paano ko ito haharapin?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇷🇺</span><span class="tr-lang">RU</span><span class="tr-txt">〇〇 не хочет принимать лекарство. Как мне поступить?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇸🇳</span><span class="tr-lang">FR</span><span class="tr-txt">〇〇 ne veut pas prendre ses médicaments. Comment dois-je réagir?</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇹🇭</span><span class="tr-lang">TH</span><span class="tr-txt">〇〇ไม่ยอมกินยา ควรรับมืออย่างไรดีครับ/ค่ะ</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇺🇸</span><span class="tr-lang">EN</span><span class="tr-txt">〇〇 refuses to take their medicine. How should I handle this?</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hourenso-card">
+      <div class="hourenso-header h-record">
+        <span class="hourenso-icon">📋</span>
+        <span class="hourenso-type"><ruby>記録<rt>きろく</rt></ruby>の<ruby>例<rt>れい</rt></ruby></span>
+        <button class="tr-toggle-btn" onclick="toggleTr(this)">🌍 <ruby>翻訳<rt>ほんやく</rt></ruby>を<ruby>見<rt>み</rt></ruby>る ▼</button>
+      </div>
+      <div class="hourenso-body">
+        <div class="hourenso-scene">📍 <ruby>場面<rt>ばめん</rt></ruby>：<ruby>食事<rt>しょくじ</rt></ruby>の<ruby>記録<rt>きろく</rt></ruby>を<ruby>書<rt>か</rt></ruby>く</div>
+        <div class="hourenso-speech">「<ruby>昼食<rt>ちゅうしょく</rt></ruby>：<ruby>主食<rt>しゅしょく</rt></ruby>8<ruby>割<rt>わり</rt></ruby>、<ruby>副食<rt>ふくしょく</rt></ruby>6<ruby>割<rt>わり</rt></ruby><ruby>摂取<rt>せっしゅ</rt></ruby>。むせ<ruby>込<rt>こ</rt></ruby>みなし。<ruby>食欲<rt>しょくよく</rt></ruby>ふつう。」</div>
+        <div class="hourenso-trans" style="display:none;">
+          <div class="tr-grid">
+            <div class="tr-cell"><span class="tr-flag">🇪🇸</span><span class="tr-lang">ES</span><span class="tr-txt">Almuerzo: plato principal 80%, plato secundario 60% ingerido. Sin atragantamiento. Apetito normal.</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇧🇷</span><span class="tr-lang">PT</span><span class="tr-txt">Almoço: prato principal 80%, acompanhamento 60% ingerido. Sem engasgo. Apetite normal.</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇨🇳</span><span class="tr-lang">ZH</span><span class="tr-txt">午饭：主食8成，副食6成摄取。无呛咳。食欲正常。</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇵🇭</span><span class="tr-lang">TL</span><span class="tr-txt">Tanghalian: pangunahing pagkain 80%, ulam 60% kinain. Walang pag-ubo. Normal ang gana.</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇷🇺</span><span class="tr-lang">RU</span><span class="tr-txt">Обед: основное блюдо 80%, гарнир 60% съедено. Без поперхиваний. Аппетит нормальный.</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇸🇳</span><span class="tr-lang">FR</span><span class="tr-txt">Déjeuner: plat principal 80%, accompagnement 60% pris. Pas d'étouffement. Appétit normal.</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇹🇭</span><span class="tr-lang">TH</span><span class="tr-txt">มื้อกลางวัน: อาหารหลัก 80% กับข้าว 60% รับประทานได้ ไม่มีอาการสำลัก ความอยากอาหารปกติ</span></div>
+            <div class="tr-cell"><span class="tr-flag">🇺🇸</span><span class="tr-lang">EN</span><span class="tr-txt">Lunch: main dish 80%, side dish 60% consumed. No choking. Appetite normal.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- N5〜N1 アコーディオン -->
+  <div class="card reveal from-right">
+    <div class="card-title">📚 <ruby>日本語<rt>にほんご</rt></ruby>レベル（N5〜N1）と<ruby>介護<rt>かいご</rt></ruby>での<ruby>活用<rt>かつよう</rt></ruby></div>
+    <div class="nlevel-list">
+      <div class="nlevel-item">
+        <div class="nlevel-header" onclick="toggleNlevel(this)">
+          <div class="nlevel-badge">N5</div>
+          <div class="nlevel-summary"><ruby>基本<rt>きほん</rt></ruby>のあいさつ・フレーズ</div>
+          <div class="nlevel-arrow">▼</div>
+        </div>
+        <div class="nlevel-body">
+          <div class="nlevel-body-inner">
+            <div class="nlevel-text">「おはようございます」「ありがとうございます」「すみません」などの<ruby>基本<rt>きほん</rt></ruby>フレーズ。<ruby>利用者<rt>りようしゃ</rt></ruby>への<ruby>簡単<rt>かんたん</rt></ruby>な<ruby>声掛<rt>こえか</rt></ruby>けができる。</div>
+            <div class="nlevel-note">🌍 Buenas días / Good morning / Bom dia / 早上好</div>
+          </div>
+        </div>
+      </div>
+      <div class="nlevel-item">
+        <div class="nlevel-header" onclick="toggleNlevel(this)">
+          <div class="nlevel-badge">N4</div>
+          <div class="nlevel-summary"><ruby>日常会話<rt>にちじょうかいわ</rt></ruby>・<ruby>食事<rt>しょくじ</rt></ruby>や<ruby>排泄<rt>はいせつ</rt></ruby>の<ruby>声掛<rt>こえか</rt></ruby>け</div>
+          <div class="nlevel-arrow">▼</div>
+        </div>
+        <div class="nlevel-body">
+          <div class="nlevel-body-inner">
+            <div class="nlevel-text">「<ruby>食事<rt>しょくじ</rt></ruby>ができました」「トイレに<ruby>行<rt>い</rt></ruby>きますか？」など<ruby>日常<rt>にちじょう</rt></ruby>の<ruby>介護<rt>かいご</rt></ruby>で<ruby>使<rt>つか</rt></ruby>う<ruby>基本<rt>きほん</rt></ruby>の<ruby>会話<rt>かいわ</rt></ruby>ができる。</div>
+            <div class="nlevel-note">目標：入職後6か月〜1年で習得を目指す</div>
+          </div>
+        </div>
+      </div>
+      <div class="nlevel-item">
+        <div class="nlevel-header" onclick="toggleNlevel(this)">
+          <div class="nlevel-badge">N3</div>
+          <div class="nlevel-summary"><ruby>申し送り<rt>もうしおくり</rt></ruby>・<ruby>簡単<rt>かんたん</rt></ruby>な<ruby>記録<rt>きろく</rt></ruby></div>
+          <div class="nlevel-arrow">▼</div>
+        </div>
+        <div class="nlevel-body">
+          <div class="nlevel-body-inner">
+            <div class="nlevel-text">「〇〇さんは<ruby>今朝<rt>けさ</rt></ruby>から<ruby>食欲<rt>しょくよく</rt></ruby>がありません」など<ruby>状態<rt>じょうたい</rt></ruby>を<ruby>言葉<rt>ことば</rt></ruby>で<ruby>報告<rt>ほうこく</rt></ruby>できる。<ruby>介護福祉士<rt>かいごふくしし</rt></ruby>の<ruby>国家試験<rt>こっかしけん</rt></ruby>の<ruby>受験<rt>じゅけん</rt></ruby>には<ruby>最低<rt>さいてい</rt></ruby>N3レベルが<ruby>望<rt>のぞ</rt></ruby>ましい。</div>
+            <div class="nlevel-note">🎯 介護福祉士国家試験の受験に推奨されるレベル</div>
+          </div>
+        </div>
+      </div>
+      <div class="nlevel-item">
+        <div class="nlevel-header" onclick="toggleNlevel(this)">
+          <div class="nlevel-badge">N2</div>
+          <div class="nlevel-summary"><ruby>詳細<rt>しょうさい</rt></ruby>な<ruby>報告<rt>ほうこく</rt></ruby>・<ruby>家族対応<rt>かぞくたいおう</rt></ruby></div>
+          <div class="nlevel-arrow">▼</div>
+        </div>
+        <div class="nlevel-body">
+          <div class="nlevel-body-inner">
+            <div class="nlevel-text"><ruby>利用者<rt>りようしゃ</rt></ruby>の<ruby>状態<rt>じょうたい</rt></ruby>を<ruby>詳<rt>くわ</rt></ruby>しく<ruby>記録<rt>きろく</rt></ruby>・<ruby>報告<rt>ほうこく</rt></ruby>できる。ご<ruby>家族<rt>かぞく</rt></ruby>への<ruby>説明<rt>せつめい</rt></ruby>や、<ruby>他職種<rt>たしょくしゅ</rt></ruby>との<ruby>連携<rt>れんけい</rt></ruby>がスムーズになる。</div>
+            <div class="nlevel-note">リーダー職への昇進を目指すなら目標にしたいレベル</div>
+          </div>
+        </div>
+      </div>
+      <div class="nlevel-item">
+        <div class="nlevel-header" onclick="toggleNlevel(this)">
+          <div class="nlevel-badge">N1</div>
+          <div class="nlevel-summary"><ruby>高度<rt>こうど</rt></ruby>な<ruby>日本語<rt>にほんご</rt></ruby>・リーダー・ケアプラン</div>
+          <div class="nlevel-arrow">▼</div>
+        </div>
+        <div class="nlevel-body">
+          <div class="nlevel-body-inner">
+            <div class="nlevel-text">ケアプランの<ruby>作成<rt>さくせい</rt></ruby>や<ruby>会議<rt>かいぎ</rt></ruby>での<ruby>発言<rt>はつげん</rt></ruby>、リーダーとして<ruby>後輩<rt>こうはい</rt></ruby>を<ruby>指導<rt>しどう</rt></ruby>するレベル。ケアマネジャーを<ruby>目指<rt>めざ</rt></ruby>す<ruby>場合<rt>ばあい</rt></ruby>はN1レベルが<ruby>望<rt>のぞ</rt></ruby>ましい。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- フラッシュカード（3Dフリップ・全言語裏面） -->
+  <div class="card reveal">
+    <div class="card-title">🃏 フラッシュカード — <ruby>介護<rt>かいご</rt></ruby>の<ruby>言葉<rt>ことば</rt></ruby></div>
+
+    <div class="fc-category-btns">
+      <button class="fc-cat-btn active" onclick="filterFC('all',this)">すべて</button>
+      <button class="fc-cat-btn" onclick="filterFC('medical',this)">🌡 <ruby>症状<rt>しょうじょう</rt></ruby>・<ruby>体調<rt>たいちょう</rt></ruby></button>
+      <button class="fc-cat-btn" onclick="filterFC('meal',this)">🍽 <ruby>食事<rt>しょくじ</rt></ruby></button>
+      <button class="fc-cat-btn" onclick="filterFC('onomatopoeia',this)">💬 オノマトペ</button>
+    </div>
+
+    <div class="fc-controls">
+      <button class="fc-btn" onclick="fcShuffle()">🔀 シャッフル</button>
+      <button class="fc-btn secondary" onclick="toggleFCList()">📋 <ruby>一覧<rt>いちらん</rt></ruby>モード</button>
+    </div>
+
+    <div id="fcCardMode">
+      <div class="fc-nav">
+        <button class="fc-nav-btn" id="fcPrev">◀</button>
+        <span class="fc-counter" id="fcCounter"></span>
+        <button class="fc-nav-btn" id="fcNext">▶</button>
+      </div>
+      <div class="fc-pair" id="fcPair"></div>
+    </div>
+
+    <div class="fc-list-wrap" id="fcListWrap">
+      <table class="fc-list-table">
+        <thead><tr><th><ruby>日本語<rt>にほんご</rt></ruby></th><th><ruby>読<rt>よ</rt></ruby>み</th><th>🇪🇸 ES</th><th>🇧🇷 PT</th><th>🇨🇳 ZH</th><th>🇵🇭 TL</th><th>🇷🇺 RU</th><th>🇸🇳 FR</th><th>🇹🇭 TH</th><th>🇺🇸 EN</th></tr></thead>
+        <tbody id="fcListBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div></div>
+
+<div class="divider"></div>
+<footer>
+  <strong>🏥 <ruby>日本<rt>にほん</rt></ruby>の<ruby>介護<rt>かいご</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>を<ruby>知<rt>し</rt></ruby>ろう | <ruby>外国人向<rt>がいこくじんむ</rt></ruby>けセミナー</strong><br>
+  <span style="opacity:.7;font-size:.9em;">ほっとスペース<ruby>稲毛<rt>いなげ</rt></ruby>ペコリーノ｜<ruby>社会福祉法人<rt>しゃかいふくしほうじん</rt></ruby><ruby>初穂会<rt>はつほかい</rt></ruby></span>
+</footer>
+
+<script>
+// ===== HERO SLIDER =====
+(function(){
+  var photos = document.querySelectorAll('.hero-photo');
+  if(photos.length < 2) return;
+  var cur = 0;
+  setInterval(function(){
+    photos[cur].classList.remove('active');
+    cur = (cur + 1) % photos.length;
+    photos[cur].classList.add('active');
+  }, 5000);
+})();
+
+function showKpPage(n){
+  document.querySelectorAll('.kp-page').forEach(function(p){ p.classList.remove('active'); });
+  var target = document.getElementById('kp-page'+n);
+  if(target) target.classList.add('active');
+}
+
+(function(){
+  const photos = document.querySelectorAll('.hero-photo');
+  if(photos.length < 2) return;
+  let cur = 0;
+  setInterval(function(){
+    photos[cur].classList.remove('active');
+    cur = (cur + 1) % photos.length;
+    photos[cur].classList.add('active');
+  }, 5000);
+})();
+
+// ===== AGING CHART =====
+new Chart(document.getElementById('agingChart').getContext('2d'),{
+  type:'line',
+  data:{labels:['1990','2000','2010','2020','2030','2040','2050'],
+    datasets:[
+      {label:'🇯🇵 日本',data:[12,17,23,28,31,35,38],borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,.1)',tension:.35,pointRadius:4,borderWidth:2.5},
+      {label:'🇨🇳 中国',data:[6,7,9,12,17,24,30],borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.07)',tension:.35,pointRadius:3},
+      {label:'🇹🇭 タイ',data:[5,7,10,14,20,27,32],borderColor:'#f97316',backgroundColor:'rgba(249,115,22,.07)',tension:.35,pointRadius:3},
+      {label:'🇧🇷 ブラジル',data:[4,5,7,10,14,19,25],borderColor:'#22c55e',backgroundColor:'rgba(34,197,94,.07)',tension:.35,pointRadius:3},
+      {label:'🇵🇪 ペルー',data:[4,5,6,8,12,17,22],borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.07)',tension:.35,pointRadius:3},
+      {label:'🇷🇺 ロシア',data:[10,12,13,15,18,22,25],borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,.07)',tension:.35,pointRadius:3},
+      {label:'🇵🇭 フィリピン',data:[3,4,5,6,8,12,16],borderColor:'#06b6d4',backgroundColor:'rgba(6,182,212,.07)',tension:.35,pointRadius:3},
+      {label:'🇸🇳 セネガル',data:[3,3,4,4,5,7,10],borderColor:'#84cc16',backgroundColor:'rgba(132,204,22,.07)',tension:.35,pointRadius:3},
+    ]},
+  options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:14},padding:16,usePointStyle:true,pointStyleWidth:20}},title:{display:true,text:'高齢化率の推移（%）推定値含む',font:{size:15,weight:'bold'}}},scales:{y:{beginAtZero:true,max:45,ticks:{callback:v=>v+'%',font:{size:13}}},x:{ticks:{font:{size:13}}}}}
+});
+
+// ===== GALLERY =====
+const galleryPhotos=[
+  {src:"images/img14.jpg",label:"授業の様子①"},
+  {src:"images/img15.jpg",label:"授業の様子②"},
+  {src:"images/img16.jpg",label:"授業の様子③"},
+  {src:"images/img17.jpg",label:"実技練習"},
+  {src:"images/img18.jpg",label:"グループ写真"},
+  {src:"images/img19.jpg",label:"レクリエーション"},
+  {src:"images/img20.jpg",label:"研修の様子"},
+  {src:"images/img21.jpg",label:"修了式"},
+  {src:"images/img22.jpg",label:"外国人スタッフ"},
+  {src:"images/img23.jpg",label:"学習の様子"}
+];
+// ギャラリー：全10枚を縦スクロールグリッドで表示
+function renderGallery(){
+  const el=document.getElementById('galleryGrid');
+  if(!el)return;
+  el.innerHTML='';
+  galleryPhotos.forEach((p,i)=>{
+    const box=document.createElement('div');
+    box.className='gallery-img-box reveal';
+    const img=document.createElement('img');
+    img.src=p.src;img.alt=p.label||'';
+    const cap=document.createElement('div');
+    cap.className='gallery-caption';cap.textContent=p.label||'';
+    box.appendChild(img);box.appendChild(cap);
+    el.appendChild(box);
+  });
+}
+function galleryNext(){}
+function galleryPrev(){}
+function galleryPrev(){curPair=(curPair-1+gpairs.length)%gpairs.length;renderGallery();}
+renderGallery();
+
+// ===== N-LEVEL ACCORDION =====
+function toggleNlevel(header){
+  const body=header.nextElementSibling;
+  const arrow=header.querySelector('.nlevel-arrow');
+  body.classList.toggle('open');
+  arrow.style.transform=body.classList.contains('open')?'rotate(180deg)':'';
+}
+
+// ===== FLASHCARDS =====
+const ALL_CARDS=[
+  {ja:'発熱',yomi:'はつねつ',cat:'medical',eg:'〇〇さんに<ruby>発熱<rt>はつねつ</rt></ruby>があります。<ruby>体温<rt>たいおん</rt></ruby>を<ruby>測<rt>はか</rt></ruby>ってください。',
+   es:'fiebre',pt:'febre',zh:'发烧',tl:'lagnat',ru:'жар / высокая температура',fr:'fièvre',th:'มีไข้',en:'fever'},
+  {ja:'微熱',yomi:'びねつ',cat:'medical',eg:'<ruby>微熱<rt>びねつ</rt></ruby>が<ruby>続<rt>つづ</rt></ruby>いているので、<ruby>様子<rt>ようす</rt></ruby>を<ruby>見<rt>み</rt></ruby>てください。',
+   es:'fiebre leve',pt:'febre baixa',zh:'低烧',tl:'banayad na lagnat',ru:'субфебрильная температура',fr:'légère fièvre',th:'ไข้ต่ำๆ',en:'low-grade fever'},
+  {ja:'解熱',yomi:'げねつ',cat:'medical',eg:'<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んで<ruby>解熱<rt>げねつ</rt></ruby>しました。',
+   es:'bajar la fiebre',pt:'redução de febre',zh:'退烧',tl:'pagbaba ng lagnat',ru:'снижение температуры',fr:'faire baisser la fièvre',th:'ไข้ลด',en:'fever reduction'},
+  {ja:'経過',yomi:'けいか',cat:'medical',eg:'その<ruby>後<rt>ご</rt></ruby>の<ruby>経過<rt>けいか</rt></ruby>を<ruby>記録<rt>きろく</rt></ruby>してください。',
+   es:'evolución',pt:'evolução',zh:'经过 / 情况变化',tl:'pagbabago ng kondisyon',ru:'течение / динамика',fr:'évolution',th:'ความคืบหน้า',en:'progress / course'},
+  {ja:'様子',yomi:'ようす',cat:'medical',eg:'<ruby>食後<rt>しょくご</rt></ruby>の<ruby>様子<rt>ようす</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>してください。',
+   es:'estado / condición',pt:'condição / estado',zh:'状态 / 情况',tl:'kalagayan',ru:'состояние',fr:'état / condition',th:'อาการ / สภาพ',en:'condition / state'},
+  {ja:'検温',yomi:'けんおん',cat:'medical',eg:'<ruby>朝<rt>あさ</rt></ruby>の<ruby>検温<rt>けんおん</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。',
+   es:'tomar la temperatura',pt:'medir a temperatura',zh:'量体温',tl:'pagsukat ng temperatura',ru:'измерение температуры',fr:'prise de température',th:'วัดอุณหภูมิ',en:'temperature check'},
+  {ja:'朝食',yomi:'ちょうしょく',cat:'meal',eg:'<ruby>朝食<rt>ちょうしょく</rt></ruby>の<ruby>準備<rt>じゅんび</rt></ruby>ができました。',
+   es:'desayuno',pt:'café da manhã',zh:'早饭',tl:'almusal',ru:'завтрак',fr:'petit-déjeuner',th:'อาหารเช้า',en:'breakfast'},
+  {ja:'昼食',yomi:'ちゅうしょく',cat:'meal',eg:'<ruby>昼食<rt>ちゅうしょく</rt></ruby>は12<ruby>時<rt>じ</rt></ruby>です。',
+   es:'almuerzo',pt:'almoço',zh:'午饭',tl:'tanghalian',ru:'обед',fr:'déjeuner',th:'อาหารกลางวัน',en:'lunch'},
+  {ja:'間食',yomi:'かんしょく',cat:'meal',eg:'<ruby>間食<rt>かんしょく</rt></ruby>はおやつの<ruby>時間<rt>じかん</rt></ruby>に<ruby>出<rt>だ</rt></ruby>します。',
+   es:'merienda / refrigerio',pt:'lanche',zh:'零食 / 点心',tl:'meryenda',ru:'перекус',fr:'collation',th:'อาหารว่าง',en:'snack'},
+  {ja:'夕食',yomi:'ゆうしょく',cat:'meal',eg:'<ruby>夕食<rt>ゆうしょく</rt></ruby><ruby>後<rt>ご</rt></ruby>に<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んでもらいます。',
+   es:'cena',pt:'jantar',zh:'晚饭',tl:'hapunan',ru:'ужин',fr:'dîner',th:'อาหารเย็น',en:'dinner'},
+  {ja:'主食',yomi:'しゅしょく',cat:'meal',eg:'<ruby>主食<rt>しゅしょく</rt></ruby>はご<ruby>飯<rt>はん</rt></ruby>か<ruby>麺<rt>めん</rt></ruby>です。',
+   es:'alimento principal',pt:'alimento principal',zh:'主食',tl:'pangunahing pagkain',ru:'основное блюдо',fr:'aliment de base',th:'อาหารหลัก',en:'staple food (rice/bread)'},
+  {ja:'副食',yomi:'ふくしょく',cat:'meal',eg:'<ruby>副食<rt>ふくしょく</rt></ruby>はおかずのことです。',
+   es:'platillo secundario',pt:'acompanhamento',zh:'副食 / 菜肴',tl:'ulam',ru:'гарнир',fr:'accompagnement',th:'กับข้าว',en:'side dish'},
+  {ja:'完食',yomi:'かんしょく',cat:'meal',eg:'〇〇さんは<ruby>今日<rt>きょう</rt></ruby><ruby>完食<rt>かんしょく</rt></ruby>しました。',
+   es:'comer todo',pt:'comer tudo',zh:'吃完 / 全部吃完',tl:'nakain lahat',ru:'съел(а) всё',fr:'tout mangé',th:'กินหมด',en:'finished everything'},
+  {ja:'全量',yomi:'ぜんりょう',cat:'meal',eg:'<ruby>全量<rt>ぜんりょう</rt></ruby><ruby>摂取<rt>せっしゅ</rt></ruby>できました。',
+   es:'cantidad total',pt:'quantidade total',zh:'全量',tl:'buong dami',ru:'весь объём',fr:'quantité totale',th:'ปริมาณทั้งหมด',en:'full amount'},
+  {ja:'食欲',yomi:'しょくよく',cat:'meal',eg:'<ruby>本日<rt>ほんじつ</rt></ruby>は<ruby>食欲<rt>しょくよく</rt></ruby>がありません。',
+   es:'apetito',pt:'apetite',zh:'食欲',tl:'gana sa pagkain',ru:'аппетит',fr:'appétit',th:'ความอยากอาหาร',en:'appetite'},
+  {ja:'ゆっくり',yomi:'（オノマトペ）',cat:'onomatopoeia',eg:'ゆっくり<ruby>食<rt>た</rt></ruby>べてください。',
+   es:'lentamente / despacio',pt:'devagar',zh:'慢慢地',tl:'dahan-dahan',ru:'медленно',fr:'lentement',th:'ช้าๆ',en:'slowly'},
+  {ja:'ぐったり',yomi:'（オノマトペ）',cat:'onomatopoeia',eg:'〇〇さんがぐったりしています。',
+   es:'extenuado / sin fuerzas',pt:'exausto / sem forças',zh:'没精打采',tl:'nanghihina / pagod na pagod',ru:'обессиленный / вялый',fr:'épuisé / sans force',th:'อ่อนแรง / หมดแรง',en:'exhausted / limp'},
+  {ja:'ふらふら',yomi:'（オノマトペ）',cat:'onomatopoeia',eg:'<ruby>立<rt>た</rt></ruby>ち<ruby>上<rt>あ</rt></ruby>がるときにふらふらします。',
+   es:'mareado / tambaleante',pt:'tonto / cambaleante',zh:'头晕 / 摇摇晃晃',tl:'nahihilo / natitisod',ru:'кружится голова',fr:'étourdi / chancelant',th:'วิงเวียน / โซเซ',en:'dizzy / unsteady'},
+  {ja:'うとうと',yomi:'（オノマトペ）',cat:'onomatopoeia',eg:'<ruby>食事<rt>しょくじ</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>にうとうとしています。',
+   es:'somnoliento',pt:'cochilando',zh:'打瞌睡',tl:'inaantok / nag-aantok',ru:'дремлет / клюёт носом',fr:'somnolent / assoupi',th:'งัวเงีย / ง่วงนอน',en:'drowsy / dozing off'},
+
+];
+
+let fcCards=[...ALL_CARDS];
+let fcPage=0;
+let listMode=false;
+const LANGS=[
+  {key:'es',flag:'🇪🇸',label:'Español'},
+  {key:'pt',flag:'🇧🇷',label:'Português'},
+  {key:'zh',flag:'🇨🇳',label:'中文'},
+  {key:'tl',flag:'🇵🇭',label:'Filipino'},
+  {key:'ru',flag:'🇷🇺',label:'Русский'},
+  {key:'fr',flag:'🇸🇳',label:'Français'},
+  {key:'th',flag:'🇹🇭',label:'ภาษาไทย'},
+  {key:'en',flag:'🇺🇸',label:'English'},
+];
+
+function filterFC(cat, btn){
+  document.querySelectorAll('.fc-cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  fcCards = cat==='all' ? [...ALL_CARDS] : ALL_CARDS.filter(c=>c.cat===cat);
+  fcPage=0;
+  renderFCCards();
+}
+
+function fcShuffle(){
+  for(let i=fcCards.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[fcCards[i],fcCards[j]]=[fcCards[j],fcCards[i]];}
+  fcPage=0; renderFCCards();
+}
+
+function toggleFCList(){
+  listMode=!listMode;
+  document.getElementById('fcCardMode').style.display=listMode?'none':'block';
+  document.getElementById('fcListWrap').classList.toggle('show',listMode);
+  document.querySelector('.fc-btn.secondary').textContent=listMode?'🃏 カードモード':'📋 一覧モード';
+  if(listMode) renderFCList();
+}
+
+function renderFCCards(){
+  const pair=document.getElementById('fcPair');
+  pair.innerHTML='';
+  const total=Math.ceil(fcCards.length/2);
+  document.getElementById('fcCounter').textContent=(fcPage+1)+' / '+total;
+  const start=fcPage*2;
+  fcCards.slice(start,start+2).forEach(c=>{
+    const wrap=document.createElement('div');
+    wrap.className='fc-single-wrap';
+    const inner=document.createElement('div');
+    inner.className='fc-card-inner';
+    inner.onclick=()=>inner.classList.toggle('flipped');
+    // 表
+    const front=document.createElement('div');
+    front.className='fc-front';
+    front.innerHTML=`<div class="fc-jp-word">${c.ja}</div><div class="fc-jp-ruby">${c.yomi}</div><div class="fc-example-front">${c.eg}</div><div class="fc-hint">👆 タップで翻訳を見る</div>`;
+    // 裏
+    const back=document.createElement('div');
+    back.className='fc-back';
+    let langsHTML='<div class="fc-langs">';
+    LANGS.forEach(l=>{langsHTML+=`<div class="fc-lang-row"><span class="fc-lang-flag">${l.flag}</span><span class="fc-lang-text"><strong>${l.label}：</strong>${c[l.key]}</span></div>`;});
+    langsHTML+='</div>';
+    langsHTML+=`<div class="fc-example-back">📝 ${c.eg}</div>`;
+    back.innerHTML=langsHTML;
+    inner.appendChild(front);inner.appendChild(back);
+    wrap.appendChild(inner);pair.appendChild(wrap);
+  });
+}
+
+function renderFCList(){
+  const tbody=document.getElementById('fcListBody');
+  tbody.innerHTML='';
+  fcCards.forEach(c=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><strong>${c.ja}</strong></td><td>${c.yomi}</td>${LANGS.map(l=>`<td>${c[l.key]}</td>`).join('')}`;
+    tbody.appendChild(tr);
+  });
+}
+
+document.getElementById('fcNext').onclick=()=>{const t=Math.ceil(fcCards.length/2);fcPage=(fcPage+1)%t;renderFCCards();};
+document.getElementById('fcPrev').onclick=()=>{const t=Math.ceil(fcCards.length/2);fcPage=(fcPage-1+t)%t;renderFCCards();};
+renderFCCards();
+
+function showIctPage(n){
+  document.querySelectorAll('.ict-page').forEach(function(p){ p.classList.remove('active'); });
+  var t = document.getElementById('ict-p'+n);
+  if(t) t.classList.add('active');
+}
+
+// ===== SCROLL REVEAL =====
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
